@@ -4,7 +4,7 @@ extends Area2D
 signal hit(fish)
 
 
-export var max_length: int = 400
+export var max_length: int = 300
 export var speed: int = 500
 
 
@@ -44,6 +44,10 @@ func squared_length() -> float:
 
 func is_max_length() -> bool:
 	return squared_length() > squared_max_length
+	
+
+func is_anchored() -> bool:
+	return anchored_fish != null
 	
 
 func _on_fish_hit(fish: Area2D) -> void:
