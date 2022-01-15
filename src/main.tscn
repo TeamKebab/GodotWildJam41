@@ -39,7 +39,7 @@ position = Vector2( 94, 813 )
 curve = SubResource( 1 )
 
 [node name="PathFollowingFishy" parent="Path2D3" instance=ExtResource( 2 )]
-position = Vector2( 681.627, 0 )
+position = Vector2( 681.63, 0 )
 rotation = 3.14159
 offset = 1019.85
 

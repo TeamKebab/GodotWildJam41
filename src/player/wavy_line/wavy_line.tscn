@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://player/wavy_line/wavy_line.gd" type="Script" id=1]
+
+[node name="WavyLine" type="Line2D"]
+width = 8.0
+default_color = Color( 1, 0.4, 0.878431, 1 )
+script = ExtResource( 1 )

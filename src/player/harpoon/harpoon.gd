@@ -13,6 +13,8 @@ var anchored_fish: Area2D = null
 
 onready var squared_max_length = pow(max_length, 2)
 onready var player = get_parent().find_node("Player")
+onready var chain = $Chain
+onready var chain_start = $ChainStart
 
 onready var states = {
 	"shoot": $StateMachine/Shoot
@@ -20,6 +22,12 @@ onready var states = {
 
 func _ready() -> void:
 	connect("area_entered", self, "_on_fish_hit")
+	
+	
+func _physics_process(_delta: float) -> void:
+	chain.rotation = -rotation
+	chain.start = chain_start.position.rotated(rotation)
+	chain.end = player.global_position - global_position
 	
 	
 func point() -> void:
