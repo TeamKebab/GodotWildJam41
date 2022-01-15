@@ -8,3 +8,4 @@ export.cfg
 .mono/
 data_*/
 bin/
+src/build/
