@@ -23,14 +23,7 @@ func _physics_process(delta: float) -> void:
 		motion = motion.move_toward(Vector2(0, -max_float_speed), pull * delta)
 	
 	motion = move_and_slide(motion, Vector2.DOWN)
-	
-	if position.y < 100:
-		position.y = 100
-	
-	if position.x < 0: 
-		position.x = 0
-	if position.x > 1024:
-		position.x = 1024
+
 		
 
 func is_reeling_in() -> bool:
