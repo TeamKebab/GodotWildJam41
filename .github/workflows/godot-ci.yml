@@ -7,7 +7,7 @@ on:
 env:
   GODOT_VERSION: 3.4.2
   EXPORT_NAME: team-kebab-gwj41
-  ITCH_GAME: unnamed-game
+  ITCH_GAME: gwj41
   ITCH_USER: team-kebab
 
 jobs:
