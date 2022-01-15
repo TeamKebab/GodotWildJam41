@@ -14,7 +14,7 @@ func exit() -> void:
 	
 func update(delta: float) -> void:
 	if harpoon.is_max_length():
-		emit_signal("finished", "Free")
+		reel_in()
 	else:
 		harpoon.position += motion * delta
 

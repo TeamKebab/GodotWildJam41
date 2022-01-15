@@ -6,7 +6,7 @@
 [ext_resource path="res://player/harpoon/states/hidden.gd" type="Script" id=4]
 [ext_resource path="res://player/harpoon/states/shoot.gd" type="Script" id=5]
 [ext_resource path="res://player/harpoon/states/anchor.gd" type="Script" id=6]
-[ext_resource path="res://player/harpoon/states/free.gd" type="Script" id=7]
+[ext_resource path="res://player/harpoon/states/reel.gd" type="Script" id=7]
 [ext_resource path="res://player/harpoon/chain.png" type="Texture" id=8]
 [ext_resource path="res://player/wavy_line/wavy_line.tscn" type="PackedScene" id=9]
 
@@ -48,5 +48,5 @@ script = ExtResource( 5 )
 [node name="Anchor" type="Node" parent="StateMachine"]
 script = ExtResource( 6 )
 
-[node name="Free" type="Node" parent="StateMachine"]
+[node name="Reel" type="Node" parent="StateMachine"]
 script = ExtResource( 7 )

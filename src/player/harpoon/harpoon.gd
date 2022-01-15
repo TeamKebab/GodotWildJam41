@@ -35,7 +35,6 @@ func point() -> void:
 
 
 func shoot() -> void:
-	anchored_fish = null
 	global_position = player.global_position
 	var direction = (get_global_mouse_position() - player.global_position).normalized()	
 	rotation = direction.angle() - PI / 2

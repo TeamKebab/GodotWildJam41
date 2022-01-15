@@ -13,9 +13,8 @@ func handle_input(event):
 
 
 func shoot() -> void:
-	harpoon.shoot()
-	emit_signal("finished", "Shoot")
+	pass
 
 
 func reel_in() -> void:
-	emit_signal("finished", "Hidden")
+	emit_signal("finished", "Reel")
