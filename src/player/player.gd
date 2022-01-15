@@ -1,11 +1,11 @@
 extends KinematicBody2D
 
 
-export var float_acceleration: int = 150
-export var friction_acceleration: int = 100
-export var reel_in_acceleration: int = 500
+export var float_acceleration: int = 100
+export var friction_acceleration: int = 50
+export var reel_in_acceleration: int = 400
 
-export var max_speed: int = 5000
+export var max_speed: int = 500
 export var max_float_speed: int = 200
 
 export var disco_mode: bool = false
@@ -28,16 +28,15 @@ func _physics_process(delta: float) -> void:
 		float_up(delta)	
 		motion = motion.move_toward(Vector2.ZERO, friction_acceleration * delta)
 		
+		
 	if harpoon.is_anchored() and harpoon.is_max_length():
+		motion += harpoon.anchored_fish.speed * fish_direction
+		
 		var projected = motion.project(fish_direction)
-		if projected.y < 0:
-			motion = projected.x * fish_direction.rotated(PI/2)	
+		if projected.y <= 0:
+			motion = projected.x * fish_direction.rotated(PI/2) + 10 * fish_direction	
 		
 	motion = move_and_slide(motion, Vector2.DOWN)
-	
-
-	if harpoon.is_anchored() and harpoon.is_max_length():
-		global_position = harpoon.global_position - harpoon.max_length * fish_direction
 
 	update()
 
