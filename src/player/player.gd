@@ -15,10 +15,9 @@ onready var harpoon = get_parent().find_node("Harpoon")
 
 
 func _physics_process(delta: float) -> void:
-	if harpoon.anchored_fish != null:
-		if Input.is_mouse_button_pressed(BUTTON_RIGHT):
-			var fish_direction = (harpoon.global_position - global_position).normalized()
-			motion = motion.move_toward(max_speed * fish_direction, reel_in_speed * delta)
+	if is_reeling_in():
+		var fish_direction = (harpoon.global_position - global_position).normalized()
+		motion = motion.move_toward(max_speed * fish_direction, reel_in_speed * delta)
 	else:
 		motion = motion.move_toward(Vector2(0, -max_float_speed), pull * delta)
 	
