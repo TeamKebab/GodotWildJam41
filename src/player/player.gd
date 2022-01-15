@@ -30,11 +30,11 @@ func _physics_process(delta: float) -> void:
 		
 		
 	if harpoon.is_anchored() and harpoon.is_max_length():
-		motion += harpoon.anchored_fish.speed * fish_direction
+		if fish_direction.dot(motion) < 0:
+			# facing opposite directions
+			motion = motion.project(fish_direction.rotated(PI/2))
 		
-		var projected = motion.project(fish_direction)
-		if projected.y <= 0:
-			motion = projected.x * fish_direction.rotated(PI/2) + 10 * fish_direction	
+		motion +=  10 * fish_direction
 		
 	motion = move_and_slide(motion, Vector2.DOWN)
 
@@ -43,17 +43,12 @@ func _physics_process(delta: float) -> void:
 
 func _draw():
 	if disco_mode:
-		if harpoon.is_anchored():
-			draw_line(Vector2.ZERO, harpoon.global_position - global_position, Color.aqua, 4)
+		draw_line(Vector2.ZERO, harpoon.global_position - global_position, Color.aqua, 4)
+		draw_line(Vector2.ZERO, (harpoon.global_position - global_position).normalized() * harpoon.max_length, Color.violet, 2)
 			
 		draw_line(Vector2.ZERO, motion, Color.red, 2)
 			
-		if harpoon.is_anchored() :
-			var fish_direction = (harpoon.global_position - global_position).normalized()
-			var projected = motion.project(fish_direction)
-			
-			draw_line(Vector2.ZERO, projected.x * fish_direction.rotated(PI/2), Color.green, 2)
-			draw_line(Vector2.ZERO, projected.y * fish_direction, Color.purple, 2)
+
 	
 
 func float_up(delta: float) -> void:
