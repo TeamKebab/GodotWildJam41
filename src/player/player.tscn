@@ -1,10 +1,35 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://player/player_spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://player/player.gd" type="Script" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 22.0
+
+[sub_resource type="Animation" id=4]
+resource_name = "Floaty"
+length = 12.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("TorsoSprite:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.249997, -1.06528, 0.5, 2.13058, 10, -0.5, -6.74785, 0.400005, 5.39835, 17, -0.5, 0.0474072, 0.5, -0.0474072, 10, -0.4, 5.70153, 0.599959, -8.55171, 0, -0.4, 0.672544, 0.400008, -0.672558, -10, -0.5, 5.84981, 0.600025, -7.02006, -17, -0.25, 0, 0.25, 0, -10, -0.431849, -7.89948, 0.249924, 4.57167, 0, -0.249997, -1.06528, 0.5, 2.13058 ),
+"times": PoolRealArray( 0, 1.5, 3, 4.5, 6, 7.5, 9, 10.5, 12 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("TorsoSprite:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.249995, 1.42003, 0.3, -1.70406, -5, -0.3, 1.09406, 0.249997, -0.911707, -5, -0.3, -1.32852, 0.249996, 1.10708, 0, -0.3, -2.29088, 0.249987, 1.90897, 5, -0.200011, -0.807104, 0.3, 1.21059, 5, -0.4, 1.34518, 0.249997, -0.840726, 0, -0.295097, 1.32416, 0.249997, -1.12179, -5, -0.3, 1.09406, 0.249997, -0.911707, -5, -0.3, -1.32852, 0.249996, 1.10708, 0, -0.3, -2.29088, 0.249987, 1.90897, 5, -0.200011, -0.807104, 0.3, 1.21059, 5, -0.4, 1.34518, 0.249997, -0.840726, 0, -0.295097, 1.09985, 0.249998, -0.931761 ),
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 )
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Idle"
@@ -109,82 +134,24 @@ tracks/8/keys = {
 "values": [ 0.0, 20.2, 0.0 ]
 }
 
-[sub_resource type="Animation" id=3]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/path = NodePath("TorsoSprite/Head:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath("TorsoSprite/Head:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"points": PoolRealArray( -24, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("TorsoSprite/ShoulderR:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 331.501 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("TorsoSprite/ShoulderL:rotation_degrees")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -331.501 ]
-}
-tracks/4/type = "bezier"
-tracks/4/path = NodePath("TorsoSprite/ShoulderR/ArmR:rotation_degrees")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"points": PoolRealArray( -50.9983, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-tracks/5/type = "bezier"
-tracks/5/path = NodePath("TorsoSprite/ShoulderR/ArmR/ForearmR:rotation_degrees")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"points": PoolRealArray( -30.2188, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-tracks/6/type = "bezier"
-tracks/6/path = NodePath("TorsoSprite/ShoulderR/ArmR/ForearmR/HandR:rotation_degrees")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"points": PoolRealArray( 131.009, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
+[sub_resource type="AnimationNodeAdd2" id=5]
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "Floaty"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeBlendTree" id=8]
+graph_offset = Vector2( 0, 63.5 )
+nodes/Add2/node = SubResource( 5 )
+nodes/Add2/position = Vector2( 239, 224 )
+nodes/Floaty/node = SubResource( 6 )
+nodes/Floaty/position = Vector2( 60, 280 )
+nodes/Idle/node = SubResource( 7 )
+nodes/Idle/position = Vector2( 60, 160 )
+nodes/output/position = Vector2( 460, 220 )
+node_connections = [ "output", 0, "Add2", "Add2", 0, "Idle", "Add2", 1, "Floaty" ]
 
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 0
@@ -233,19 +200,20 @@ polygon = PoolVector2Array( 70.7659, 10.6796, 82.6321, 10.5717, 86.8393, 15.2104
 uv = PoolVector2Array( 70.7659, 10.6796, 82.6321, 10.5717, 86.8393, 15.2104, 87.055, 23.9482, 78.1014, 24.0561, 70.658, 15.7497 )
 
 [node name="TorsoSprite" type="Sprite" parent="."]
+position = Vector2( 0.207463, 0.574506 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 32, 31, 32, 35 )
 
 [node name="Head" type="Sprite" parent="TorsoSprite"]
-position = Vector2( 0, -24 )
+position = Vector2( 0, -24.0698 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 36, 7, 24, 19 )
 
 [node name="ShoulderR" type="Sprite" parent="TorsoSprite"]
 position = Vector2( 11, -16 )
-rotation = 5.78578
+rotation = 5.81034
 z_index = 100
 texture = ExtResource( 2 )
 offset = Vector2( 4, 4 )
@@ -254,7 +222,7 @@ region_rect = Rect2( 71, 11, 16, 13 )
 
 [node name="ArmR" type="Sprite" parent="TorsoSprite/ShoulderR"]
 position = Vector2( 4, 5 )
-rotation = -0.890088
+rotation = -0.865885
 z_index = -1
 texture = ExtResource( 2 )
 offset = Vector2( 0, 4 )
@@ -263,7 +231,7 @@ region_rect = Rect2( 81, 34, 9, 12 )
 
 [node name="ForearmR" type="Sprite" parent="TorsoSprite/ShoulderR/ArmR"]
 position = Vector2( -1, 8 )
-rotation = -0.527418
+rotation = 0.014937
 texture = ExtResource( 2 )
 offset = Vector2( 0, 3 )
 region_enabled = true
@@ -271,7 +239,7 @@ region_rect = Rect2( 81, 52, 9, 12 )
 
 [node name="HandR" type="Sprite" parent="TorsoSprite/ShoulderR/ArmR/ForearmR"]
 position = Vector2( 0, 9 )
-rotation = 2.28654
+rotation = -0.014937
 texture = ExtResource( 2 )
 offset = Vector2( 1.45895, 1.79782 )
 region_enabled = true
@@ -279,7 +247,7 @@ region_rect = Rect2( 81, 71, 9, 8 )
 
 [node name="ShoulderL" type="Sprite" parent="TorsoSprite"]
 position = Vector2( -11, -16 )
-rotation = -5.78578
+rotation = -5.81038
 z_index = 100
 texture = ExtResource( 2 )
 offset = Vector2( -4, 4 )
@@ -289,7 +257,7 @@ region_rect = Rect2( 71, 11, 16, 13 )
 
 [node name="ArmL" type="Sprite" parent="TorsoSprite/ShoulderL"]
 position = Vector2( -4, 5 )
-rotation = 0.554156
+rotation = 0.865879
 z_index = -1
 texture = ExtResource( 2 )
 offset = Vector2( 0, 4 )
@@ -299,7 +267,7 @@ region_rect = Rect2( 81, 34, 9, 12 )
 
 [node name="ForearmL" type="Sprite" parent="TorsoSprite/ShoulderL/ArmL"]
 position = Vector2( 1, 8 )
-rotation = -0.199549
+rotation = -0.036533
 texture = ExtResource( 2 )
 offset = Vector2( 0, 3 )
 flip_h = true
@@ -308,7 +276,7 @@ region_rect = Rect2( 81, 52, 9, 12 )
 
 [node name="HandL" type="Sprite" parent="TorsoSprite/ShoulderL/ArmL/ForearmL"]
 position = Vector2( 0, 9 )
-rotation = 0.199549
+rotation = 0.036533
 texture = ExtResource( 2 )
 offset = Vector2( -1.45895, 1.79782 )
 flip_h = true
@@ -355,6 +323,12 @@ region_enabled = true
 region_rect = Rect2( 12, 76, 9, 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "Idle"
+autoplay = "Floaty"
+anims/Floaty = SubResource( 4 )
 anims/Idle = SubResource( 2 )
-anims/RESET = SubResource( 3 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 8 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/Add2/add_amount = 0.5
