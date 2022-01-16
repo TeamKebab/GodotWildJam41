@@ -3,4 +3,5 @@
 [ext_resource path="res://fishies/path_following_fishy/path_following_fishy.gd" type="Script" id=2]
 
 [node name="PathFollowingFishy" type="PathFollow2D"]
+loop = false
 script = ExtResource( 2 )
