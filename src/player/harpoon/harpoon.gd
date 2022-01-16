@@ -4,8 +4,8 @@ class_name Harpoon
 signal hit(fish)
 
 
-export var max_length: int = 300
-export var speed: int = 500
+export var max_length: int = 100
+export var speed: int = 120
 
 
 var anchored_fish: Area2D = null

@@ -1,7 +1,7 @@
 extends PathFollow2D
 
 
-export var speed: int = 100
+export var speed: int = 25
 export var back: bool = false
 
 

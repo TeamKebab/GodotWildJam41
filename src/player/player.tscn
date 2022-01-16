@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://player/collide.wav" type="AudioStream" id=1]
 [ext_resource path="res://player/floaty_animation.tres" type="Animation" id=3]
@@ -9,30 +9,6 @@
 radius = 7.0
 height = 4.0
 
-[sub_resource type="Animation" id=2]
-resource_name = "Idle"
-length = 2.0
-loop = true
-
-[sub_resource type="AnimationNodeAdd2" id=5]
-
-[sub_resource type="AnimationNodeAnimation" id=6]
-animation = "Floaty"
-
-[sub_resource type="AnimationNodeAnimation" id=7]
-animation = "Idle"
-
-[sub_resource type="AnimationNodeBlendTree" id=8]
-graph_offset = Vector2( 0, 63.5 )
-nodes/Add2/node = SubResource( 5 )
-nodes/Add2/position = Vector2( 239, 224 )
-nodes/Floaty/node = SubResource( 6 )
-nodes/Floaty/position = Vector2( 60, 280 )
-nodes/Idle/node = SubResource( 7 )
-nodes/Idle/position = Vector2( 60, 160 )
-nodes/output/position = Vector2( 460, 220 )
-node_connections = [ "output", 0, "Add2", "Add2", 0, "Idle", "Add2", 1, "Floaty" ]
-
 [sub_resource type="CapsuleShape2D" id=9]
 radius = 7.0
 height = 4.0
@@ -41,17 +17,18 @@ height = 4.0
 collision_layer = 0
 collision_mask = 4
 script = ExtResource( 5 )
-friction_acceleration = 20
-reel_in_acceleration = 300
-max_speed = 350
-max_float_speed = 300
+float_acceleration = 25
+friction_acceleration = 5
+reel_in_acceleration = 80
+max_speed = 100
+max_float_speed = 80
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 2.26369, -2.98373 )
+position = Vector2( -0.0752163, -0.0745474 )
 texture = ExtResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -67,18 +44,12 @@ drag_margin_bottom = 0.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Floaty"
 anims/Floaty = ExtResource( 3 )
-anims/Idle = SubResource( 2 )
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 8 )
-anim_player = NodePath("../AnimationPlayer")
-parameters/Add2/add_amount = 0.5
 
 [node name="CrashSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 1 )
 
 [node name="Hitbox" type="Area2D" parent="."]
-position = Vector2( 2.26369, -2.98373 )
+position = Vector2( -0.0752163, -0.0745474 )
 collision_layer = 0
 collision_mask = 8
 

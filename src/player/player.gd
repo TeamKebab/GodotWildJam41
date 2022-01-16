@@ -82,14 +82,14 @@ func urchin_hit(urchin: Urchin) -> void:
 	var delay = 0
 	
 	for i in 3:
-		disable_tween.interpolate_property($TorsoSprite, "modulate", 
+		disable_tween.interpolate_property($Sprite, "modulate", 
 			Color.white, Color.transparent, 
 			duration, 
 			Tween.TRANS_QUAD, Tween.EASE_IN_OUT, 
 			delay)
 		delay += duration
 		
-		disable_tween.interpolate_property($TorsoSprite, "modulate", 
+		disable_tween.interpolate_property($Sprite, "modulate", 
 			Color.transparent, Color.white, 
 			duration, 
 			Tween.TRANS_QUAD, Tween.EASE_IN_OUT, 
