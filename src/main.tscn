@@ -1,19 +1,14 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://fishies/path_following_fishy/path_following_fishy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player/harpoon/harpoon.tscn" type="PackedScene" id=3]
 [ext_resource path="res://levels/hill_autotile.tres" type="TileSet" id=4]
+[ext_resource path="res://fishies/clownfish/clownfish.tscn" type="PackedScene" id=5]
 [ext_resource path="res://main.gd" type="Script" id=6]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 467.016, 0.899475, 0, 0, 0, 0, 852, 0, 0, 0, 0, 0, 0, 0 )
-}
-
-[sub_resource type="Curve2D" id=2]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 852.136, -436.572, 0, 0, 0, 0, 852.951, 0.263184, 0, 0, 0, 0, 852.136, -436.151 )
 }
 
 [sub_resource type="Curve2D" id=3]
@@ -24,6 +19,11 @@ _data = {
 [sub_resource type="Curve2D" id=4]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 367.505, 32.7761, 0, 0, 0, 0, -48.744, 33.72, 0, 0, 0, 0, 367.505, 33.72 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 852.136, -436.572, 0, 0, 0, 0, 852.951, 0.263184, 0, 0, 0, 0, 852.136, -436.151 )
 }
 
 [node name="Level" type="Node"]
@@ -39,186 +39,184 @@ tile_data = PoolIntArray( -524262, 0, 3, -524261, 0, 4, -524260, 0, 4, -524259, 
 
 [node name="Fishies" type="Node2D" parent="."]
 
-[node name="Path2D" type="Path2D" parent="Fishies"]
-position = Vector2( 100, 500 )
-curve = SubResource( 1 )
-
-[node name="PathFollowingFishy" parent="Fishies/Path2D" instance=ExtResource( 2 )]
-rotation = 0.001926
-
-[node name="Path2D2" type="Path2D" parent="Fishies"]
+[node name="HPath1" type="Path2D" parent="Fishies"]
 position = Vector2( 94, 129.929 )
 curve = SubResource( 1 )
 
-[node name="PathFollowingFishy" parent="Fishies/Path2D2" instance=ExtResource( 2 )]
-position = Vector2( 339.815, 0.654486 )
-rotation = 0.00192598
-offset = 339.951
+[node name="Clownfish" parent="Fishies/HPath1" instance=ExtResource( 5 )]
+position = Vector2( 339.814, 0.654484 )
+rotation = 0.00192595
+offset = 339.95
 
-[node name="Path2D3" type="Path2D" parent="Fishies"]
-position = Vector2( 94, 813 )
-curve = SubResource( 1 )
-
-[node name="PathFollowingFishy" parent="Fishies/Path2D3" instance=ExtResource( 2 )]
-position = Vector2( 679.89, 0 )
-rotation = 3.14159
-offset = 1019.85
-
-[node name="Path2D18" type="Path2D" parent="Fishies"]
-position = Vector2( 94, 2275.72 )
-curve = SubResource( 1 )
-
-[node name="PathFollowingFishy" parent="Fishies/Path2D18" instance=ExtResource( 2 )]
-position = Vector2( 679.89, 0 )
-rotation = 3.14159
-offset = 1019.85
-
-[node name="Path2D19" type="Path2D" parent="Fishies"]
-position = Vector2( 94, 2437.46 )
-curve = SubResource( 1 )
-
-[node name="PathFollowingFishy" parent="Fishies/Path2D19" instance=ExtResource( 2 )]
-position = Vector2( 679.89, 0 )
-rotation = 3.14159
-offset = 1019.85
-
-[node name="Path2D11" type="Path2D" parent="Fishies"]
-position = Vector2( 98.7568, 1471.82 )
-curve = SubResource( 1 )
-
-[node name="PathFollowingFishy" parent="Fishies/Path2D11" instance=ExtResource( 2 )]
-position = Vector2( 679.89, 0 )
-rotation = 3.14159
-offset = 1019.85
-
-[node name="Fishy" parent="Fishies/Path2D11/PathFollowingFishy" index="0"]
-speed = 200
-
-[node name="Path2D4" type="Path2D" parent="Fishies"]
-position = Vector2( 95.6424, 1004.42 )
-curve = SubResource( 2 )
-
-[node name="PathFollowingFishy" parent="Fishies/Path2D4" instance=ExtResource( 2 )]
-position = Vector2( 852.136, -436.151 )
-offset = 1019.85
-
-[node name="Path2D5" type="Path2D" parent="Fishies"]
-position = Vector2( -731.393, 1291.74 )
-curve = SubResource( 2 )
-
-[node name="PathFollowingFishy" parent="Fishies/Path2D5" instance=ExtResource( 2 )]
-position = Vector2( 852.136, -436.151 )
-offset = 1019.85
-
-[node name="Path2D6" type="Path2D" parent="Fishies"]
-position = Vector2( -152.073, 1395.86 )
-curve = SubResource( 2 )
-
-[node name="PathFollowingFishy" parent="Fishies/Path2D6" instance=ExtResource( 2 )]
-position = Vector2( 852.136, -436.151 )
-offset = 1019.85
-
-[node name="Path2D16" type="Path2D" parent="Fishies"]
-position = Vector2( 52.4705, 2011.87 )
-curve = SubResource( 2 )
-
-[node name="PathFollowingFishy" parent="Fishies/Path2D16" instance=ExtResource( 2 )]
-position = Vector2( 852.136, -436.151 )
-offset = 1019.85
-
-[node name="Path2D17" type="Path2D" parent="Fishies"]
-position = Vector2( -85.4775, 2344.85 )
-curve = SubResource( 2 )
-
-[node name="PathFollowingFishy" parent="Fishies/Path2D17" instance=ExtResource( 2 )]
-position = Vector2( 852.136, -436.151 )
-offset = 1019.85
-
-[node name="Path2D7" type="Path2D" parent="Fishies"]
-position = Vector2( 85.3221, 1332.78 )
-curve = SubResource( 3 )
-
-[node name="PathFollowingFishy" parent="Fishies/Path2D7" instance=ExtResource( 2 )]
-rotation = -0.000655926
-offset = 1019.85
-
-[node name="Fishy" parent="Fishies/Path2D7/PathFollowingFishy" index="0"]
-speed = 200
-
-[node name="Path2D12" type="Path2D" parent="Fishies"]
-position = Vector2( 73.9956, 1604.61 )
-curve = SubResource( 3 )
-
-[node name="PathFollowingFishy" parent="Fishies/Path2D12" instance=ExtResource( 2 )]
-position = Vector2( 314.962, -0.213436 )
-rotation = 3.13937
-offset = 315.116
-
-[node name="Path2D13" type="Path2D" parent="Fishies"]
-position = Vector2( 75.8834, 1776.4 )
-curve = SubResource( 3 )
-
-[node name="PathFollowingFishy" parent="Fishies/Path2D13" instance=ExtResource( 2 )]
-position = Vector2( 157.405, -0.917264 )
-rotation = 0.00446456
-offset = 157.558
-
-[node name="Path2D14" type="Path2D" parent="Fishies"]
-position = Vector2( 71.1266, 1961.98 )
-curve = SubResource( 3 )
-
-[node name="PathFollowingFishy" parent="Fishies/Path2D14" instance=ExtResource( 2 )]
-position = Vector2( 157.378, -0.103228 )
-rotation = 3.14094
-offset = 472.674
-
-[node name="Path2D15" type="Path2D" parent="Fishies"]
-position = Vector2( 110.279, 2132.44 )
-curve = SubResource( 3 )
-
-[node name="PathFollowingFishy" parent="Fishies/Path2D15" instance=ExtResource( 2 )]
-position = Vector2( 157.378, -0.103228 )
-rotation = 3.14094
-offset = 472.674
-
-[node name="Path2D20" type="Path2D" parent="Fishies"]
-position = Vector2( 369.526, 2565.32 )
-curve = SubResource( 3 )
-
-[node name="PathFollowingFishy" parent="Fishies/Path2D20" instance=ExtResource( 2 )]
-position = Vector2( 157.378, -0.103228 )
-rotation = 3.14094
-offset = 472.674
-
-[node name="Path2D10" type="Path2D" parent="Fishies"]
-position = Vector2( 375.321, 633.775 )
-curve = SubResource( 4 )
-
-[node name="PathFollowingFishy" parent="Fishies/Path2D10" instance=ExtResource( 2 )]
-position = Vector2( 367.505, 33.72 )
-offset = 1019.85
-
-[node name="Path2D8" type="Path2D" parent="Fishies"]
+[node name="HPath2" type="Path2D" parent="Fishies"]
 position = Vector2( 168.383, 273.751 )
 curve = SubResource( 3 )
 
-[node name="PathFollowingFishy" parent="Fishies/Path2D8" instance=ExtResource( 2 )]
-rotation = -0.000655926
-offset = 1019.85
+[node name="Clownfish" parent="Fishies/HPath2" instance=ExtResource( 5 )]
+position = Vector2( 240.334, -0.157642 )
+rotation = 3.14094
+offset = 389.618
 
-[node name="Path2D9" type="Path2D" parent="Fishies"]
+[node name="HPath3" type="Path2D" parent="Fishies"]
 position = Vector2( 574.249, 388.904 )
 curve = SubResource( 3 )
 
-[node name="PathFollowingFishy" parent="Fishies/Path2D9" instance=ExtResource( 2 )]
+[node name="Clownfish" parent="Fishies/HPath3" instance=ExtResource( 5 )]
+position = Vector2( 240.334, -0.157642 )
+rotation = 3.14094
+offset = 389.618
+
+[node name="HPath4" type="Path2D" parent="Fishies"]
+position = Vector2( 100, 500 )
+curve = SubResource( 1 )
+
+[node name="Clownfish" parent="Fishies/HPath4" instance=ExtResource( 5 )]
+rotation = 0.001926
+
+[node name="HPath5" type="Path2D" parent="Fishies"]
+position = Vector2( 375.321, 633.775 )
+curve = SubResource( 4 )
+
+[node name="Clownfish" parent="Fishies/HPath5" instance=ExtResource( 5 )]
+position = Vector2( 177.381, 33.2072 )
+rotation = 3.13933
+offset = 189.997
+
+[node name="HPath6" type="Path2D" parent="Fishies"]
+position = Vector2( 94, 813 )
+curve = SubResource( 1 )
+
+[node name="Clownfish" parent="Fishies/HPath6" instance=ExtResource( 5 )]
+position = Vector2( 679.89, 0 )
+rotation = 3.14159
+offset = 1019.85
+
+[node name="HPath7" type="Path2D" parent="Fishies"]
+position = Vector2( 85.3221, 1332.78 )
+curve = SubResource( 3 )
+
+[node name="Clownfish" parent="Fishies/HPath7" instance=ExtResource( 5 )]
 rotation = -0.000655926
 offset = 1019.85
+
+[node name="HPath8" type="Path2D" parent="Fishies"]
+position = Vector2( 98.7568, 1471.82 )
+curve = SubResource( 1 )
+
+[node name="Clownfish" parent="Fishies/HPath8" instance=ExtResource( 5 )]
+position = Vector2( 679.89, 0 )
+rotation = 3.14159
+offset = 1019.85
+
+[node name="HPath9" type="Path2D" parent="Fishies"]
+position = Vector2( 73.9956, 1604.61 )
+curve = SubResource( 3 )
+
+[node name="Clownfish" parent="Fishies/HPath9" instance=ExtResource( 5 )]
+position = Vector2( 314.962, -0.213423 )
+rotation = 3.13938
+offset = 315.12
+
+[node name="HPath10" type="Path2D" parent="Fishies"]
+position = Vector2( 75.8834, 1776.4 )
+curve = SubResource( 3 )
+
+[node name="Clownfish" parent="Fishies/HPath10" instance=ExtResource( 5 )]
+position = Vector2( 157.407, -0.917255 )
+rotation = 0.00446456
+offset = 157.56
+
+[node name="HPath11" type="Path2D" parent="Fishies"]
+position = Vector2( 71.1266, 1961.98 )
+curve = SubResource( 3 )
+
+[node name="Clownfish" parent="Fishies/HPath11" instance=ExtResource( 5 )]
+position = Vector2( 157.382, -0.103231 )
+rotation = 3.14094
+offset = 472.67
+
+[node name="HPath12" type="Path2D" parent="Fishies"]
+position = Vector2( 110.279, 2132.44 )
+curve = SubResource( 3 )
+
+[node name="Clownfish" parent="Fishies/HPath12" instance=ExtResource( 5 )]
+position = Vector2( 157.382, -0.103231 )
+rotation = 3.14094
+offset = 472.67
+
+[node name="HPath13" type="Path2D" parent="Fishies"]
+position = Vector2( 94, 2275.72 )
+curve = SubResource( 1 )
+
+[node name="Clownfish" parent="Fishies/HPath13" instance=ExtResource( 5 )]
+position = Vector2( 679.89, 0 )
+rotation = 3.14159
+offset = 1019.85
+
+[node name="HPath14" type="Path2D" parent="Fishies"]
+position = Vector2( 94, 2437.46 )
+curve = SubResource( 1 )
+
+[node name="Clownfish" parent="Fishies/HPath14" instance=ExtResource( 5 )]
+position = Vector2( 679.89, 0 )
+rotation = 3.14159
+offset = 1019.85
+
+[node name="HPath15" type="Path2D" parent="Fishies"]
+position = Vector2( 369.526, 2565.32 )
+curve = SubResource( 3 )
+
+[node name="Clownfish" parent="Fishies/HPath15" instance=ExtResource( 5 )]
+position = Vector2( 157.382, -0.103231 )
+rotation = 3.14094
+offset = 472.67
+
+[node name="VPath1" type="Path2D" parent="Fishies"]
+position = Vector2( -731.393, 1291.74 )
+curve = SubResource( 2 )
+
+[node name="Clownfish" parent="Fishies/VPath1" instance=ExtResource( 5 )]
+position = Vector2( 852.415, -286.874 )
+rotation = 1.56891
+offset = 149.581
+
+[node name="VPath2" type="Path2D" parent="Fishies"]
+position = Vector2( -152.073, 1395.86 )
+curve = SubResource( 2 )
+
+[node name="Clownfish" parent="Fishies/VPath2" instance=ExtResource( 5 )]
+position = Vector2( 852.415, -286.874 )
+rotation = 1.56891
+offset = 149.581
+
+[node name="VPath3" type="Path2D" parent="Fishies"]
+position = Vector2( -85.4775, 2344.85 )
+curve = SubResource( 2 )
+
+[node name="Clownfish" parent="Fishies/VPath3" instance=ExtResource( 5 )]
+position = Vector2( 852.415, -286.874 )
+rotation = 1.56891
+offset = 149.581
+
+[node name="VPath4" type="Path2D" parent="Fishies"]
+position = Vector2( 52.4705, 2011.87 )
+curve = SubResource( 2 )
+
+[node name="Clownfish" parent="Fishies/VPath4" instance=ExtResource( 5 )]
+position = Vector2( 852.415, -286.874 )
+rotation = 1.56891
+offset = 149.581
+
+[node name="VPath5" type="Path2D" parent="Fishies"]
+position = Vector2( 95.6424, 1004.42 )
+curve = SubResource( 2 )
+
+[node name="Clownfish" parent="Fishies/VPath5" instance=ExtResource( 5 )]
+position = Vector2( 852.415, -286.874 )
+rotation = 1.56891
+offset = 149.581
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 525.214, 99.8986 )
 
 [node name="Harpoon" parent="." instance=ExtResource( 3 )]
-
-[editable path="Fishies/Path2D11/PathFollowingFishy"]
-[editable path="Fishies/Path2D7/PathFollowingFishy"]
-[editable path="Fishies/Path2D12/PathFollowingFishy"]

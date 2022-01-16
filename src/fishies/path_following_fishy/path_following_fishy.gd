@@ -1,8 +1,9 @@
 extends PathFollow2D
 
 
-onready var fish = $Fishy
+export var speed: int = 100
+
 
 func _physics_process(delta: float) -> void:
-	offset += fish.speed * delta
+	offset += speed * delta
 	
