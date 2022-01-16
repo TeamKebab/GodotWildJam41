@@ -14,14 +14,26 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://fishies/fishy.gd"
 }, {
+"base": "Area2D",
+"class": "Harpoon",
+"language": "GDScript",
+"path": "res://player/harpoon/harpoon.gd"
+}, {
 "base": "Node",
 "class": "SceneLoader",
 "language": "GDScript",
 "path": "res://components/scene_loader/scene_loader.gd"
+}, {
+"base": "Fish",
+"class": "Urchin",
+"language": "GDScript",
+"path": "res://fishies/urchin/urchin.gd"
 } ]
 _global_script_class_icons={
 "Fish": "",
-"SceneLoader": ""
+"Harpoon": "",
+"SceneLoader": "",
+"Urchin": ""
 }
 
 [application]
@@ -67,6 +79,7 @@ texture={
 2d_physics/layer_1="harpoon"
 2d_physics/layer_2="fishies"
 2d_physics/layer_3="walls"
+2d_physics/layer_4="fish hitbox"
 
 [physics]
 

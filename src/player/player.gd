@@ -13,9 +13,16 @@ export var disco_mode: bool = false
 var motion = Vector2.ZERO
 var was_on_floor: bool
 
-onready var harpoon = get_parent().find_node("Harpoon")
+onready var harpoon: Harpoon = get_parent().find_node("Harpoon")
 onready var crash_sound = $CrashSound
 
+onready var hitbox = $Hitbox
+onready var disable_tween = $DisableTween
+ 
+
+func _ready() -> void:
+	hitbox.connect("area_entered", self, "_on_hitbox_area_entered")
+	
 
 func _physics_process(delta: float) -> void:	
 	var fish_direction = (harpoon.global_position - global_position).normalized()
@@ -58,7 +65,6 @@ func _draw():
 		draw_line(Vector2.ZERO, motion, Color.red, 2)
 			
 
-	
 
 func float_up(delta: float) -> void:
 	motion.y = max(-max_float_speed, motion.y - float_acceleration * delta)
@@ -66,3 +72,38 @@ func float_up(delta: float) -> void:
 
 func is_reeling_in() -> bool:
 	return Input.is_mouse_button_pressed(BUTTON_RIGHT)
+
+
+func urchin_hit(urchin: Urchin) -> void:
+	harpoon.disable()
+	motion = urchin.global_position.direction_to(global_position) * urchin.bounce_speed
+	
+	var duration = 0.2
+	var delay = 0
+	
+	for i in 3:
+		disable_tween.interpolate_property($TorsoSprite, "modulate", 
+			Color.white, Color.transparent, 
+			duration, 
+			Tween.TRANS_QUAD, Tween.EASE_IN_OUT, 
+			delay)
+		delay += duration
+		
+		disable_tween.interpolate_property($TorsoSprite, "modulate", 
+			Color.transparent, Color.white, 
+			duration, 
+			Tween.TRANS_QUAD, Tween.EASE_IN_OUT, 
+			delay)
+		delay += duration
+	
+	disable_tween.start()
+	
+	yield(disable_tween, "tween_all_completed")
+	
+	harpoon.enable()
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.get_parent() is Urchin:
+		urchin_hit(area.get_parent())
+		

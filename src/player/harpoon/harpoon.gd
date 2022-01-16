@@ -1,5 +1,5 @@
 extends Area2D
-
+class_name Harpoon
 
 signal hit(fish)
 
@@ -57,5 +57,13 @@ func is_anchored() -> bool:
 	return anchored_fish != null
 	
 
+func enable() -> void:
+	$StateMachine._change_state("Hidden")
+	
+
+func disable() -> void:
+	$StateMachine._change_state("Disabled")
+	
+	
 func _on_fish_hit(fish: Area2D) -> void:
 	emit_signal("hit", fish)
