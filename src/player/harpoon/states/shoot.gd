@@ -3,8 +3,11 @@ extends "res://player/harpoon/states/base.gd"
 
 var motion = Vector2.ZERO
 
+onready var shoot_sound = $ShootSound
+
 
 func enter() -> void:
+	shoot_sound.play()
 	harpoon.connect("hit", self, "_on_fish_hit")
 
 

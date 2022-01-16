@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://player/harpoon/harpoon.png" type="Texture" id=1]
 [ext_resource path="res://player/harpoon/harpoon.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://player/harpoon/states/reel.gd" type="Script" id=7]
 [ext_resource path="res://player/harpoon/chain.png" type="Texture" id=8]
 [ext_resource path="res://player/wavy_line/wavy_line.tscn" type="PackedScene" id=9]
+[ext_resource path="res://player/harpoon/shoot.wav" type="AudioStream" id=10]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -44,6 +45,10 @@ script = ExtResource( 4 )
 
 [node name="Shoot" type="Node" parent="StateMachine"]
 script = ExtResource( 5 )
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="StateMachine/Shoot"]
+stream = ExtResource( 10 )
+bus = "Sounds"
 
 [node name="Anchor" type="Node" parent="StateMachine"]
 script = ExtResource( 6 )
