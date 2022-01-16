@@ -11,8 +11,10 @@ export var max_float_speed: int = 200
 export var disco_mode: bool = false
 
 var motion = Vector2.ZERO
+var was_on_floor: bool
 
 onready var harpoon = get_parent().find_node("Harpoon")
+onready var crash_sound = $CrashSound
 
 
 func _physics_process(delta: float) -> void:	
@@ -35,9 +37,16 @@ func _physics_process(delta: float) -> void:
 			motion = motion.project(fish_direction.rotated(PI/2))
 		
 		motion +=  10 * fish_direction
-		
+	
 	motion = move_and_slide(motion, Vector2.DOWN)
-
+	
+	var is_on_floor = is_on_ceiling() or is_on_floor() or is_on_wall()
+	
+	if not was_on_floor and is_on_floor and not crash_sound.playing:
+		crash_sound.play()
+	
+	was_on_floor = is_on_floor
+	
 	update()
 
 
