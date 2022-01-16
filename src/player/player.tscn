@@ -158,6 +158,11 @@ node_connections = [ "output", 0, "Add2", "Add2", 0, "Idle", "Add2", 1, "Floaty"
 collision_layer = 0
 collision_mask = 4
 script = ExtResource( 5 )
+friction_acceleration = 20
+reel_in_acceleration = 300
+max_speed = 350
+max_float_speed = 300
+
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -167,10 +172,10 @@ current = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true
-drag_margin_left = 0.9
-drag_margin_top = 0.3
-drag_margin_right = 0.9
-drag_margin_bottom = 0.3
+drag_margin_left = 1.0
+drag_margin_top = 0.0
+drag_margin_right = 1.0
+drag_margin_bottom = 0.0
 
 [node name="Polygons" type="Node2D" parent="."]
 visible = false
