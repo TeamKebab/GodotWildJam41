@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://fishies/fishy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://fishies/clownfish/clownfish.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fishies/path_following_fishy/path_following_fishy.gd" type="Script" id=2]
 
 [node name="PathFollowingFishy" type="PathFollow2D"]
