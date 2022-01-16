@@ -1,6 +1,13 @@
 extends "res://player/harpoon/states/base.gd"
 
 
+onready var latch_sound = $LatchSound
+
+
+func enter() -> void:
+	latch_sound.play()
+	
+	
 func exit() -> void:
 	harpoon.anchored_fish = null
 	
