@@ -85,7 +85,7 @@ position = Vector2( 94, 813 )
 curve = SubResource( 1 )
 
 [node name="Clownfish" parent="Fishies/HPath6" instance=ExtResource( 5 )]
-position = Vector2( 682.123, 0 )
+position = Vector2( 682.122, 0 )
 offset = 680.44
 loop = true
 
@@ -169,7 +169,7 @@ position = Vector2( 369.526, 2565.32 )
 curve = SubResource( 3 )
 
 [node name="Clownfish" parent="Fishies/HPath15" instance=ExtResource( 5 )]
-position = Vector2( 158.017, -0.914533 )
+position = Vector2( 158.017, -0.914531 )
 rotation = 0.00446454
 offset = 158.304
 loop = true

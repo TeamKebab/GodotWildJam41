@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=6 format=2]
+
+[ext_resource path="res://themes/fonts/retro4_16.tres" type="DynamicFont" id=1]
+[ext_resource path="res://themes/panel.tres" type="StyleBox" id=2]
+[ext_resource path="res://themes/button_pressed.tres" type="StyleBox" id=3]
+[ext_resource path="res://themes/button_normal.tres" type="StyleBox" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[resource]
+default_font = ExtResource( 1 )
+Button/styles/focus = SubResource( 1 )
+Button/styles/hover = ExtResource( 4 )
+Button/styles/normal = ExtResource( 4 )
+Button/styles/pressed = ExtResource( 3 )
+Panel/styles/panel = ExtResource( 2 )
+PanelContainer/styles/panel = ExtResource( 2 )
+PopupPanel/styles/panel = ExtResource( 2 )

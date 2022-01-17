@@ -6,6 +6,8 @@ onready var latch_sound = $LatchSound
 
 func enter() -> void:
 	latch_sound.play()
+	yield(latch_sound, "finished")
+	harpoon.anchored_fish.hook()
 	
 	
 func exit() -> void:
