@@ -4,6 +4,7 @@ class_name Fish
 
 signal hooked
 signal released
+signal run_away
 
 
 export var type := "Default"

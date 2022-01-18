@@ -10,11 +10,13 @@ func enter() -> void:
 	latch_sound.play()
 	yield(latch_sound, "finished")
 	harpoon.anchored_fish.hook()
+	harpoon.anchored_fish.connect("run_away", self, "_on_fish_ran_away")
 	enter_finished = true
 	
 	
 func exit() -> void:
 	enter_finished = false
+	harpoon.anchored_fish.disconnect("run_away", self, "_on_fish_ran_away")
 	harpoon.anchored_fish.release()
 	harpoon.anchored_fish = null
 	
@@ -31,3 +33,7 @@ func shoot() -> void:
 
 func reel_in() -> void:
 	pass
+
+
+func _on_fish_ran_away() -> void:
+	emit_signal("finished", "Reel")

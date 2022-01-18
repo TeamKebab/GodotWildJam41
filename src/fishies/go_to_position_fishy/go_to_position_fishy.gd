@@ -1,6 +1,9 @@
 extends Fish
 
 
+signal end_reached
+
+
 export var speed:= 25
 export var amplitude:= 2
 export var frequency:= 5
@@ -21,7 +24,7 @@ onready var end: Vector2 =  $End.global_position if $End != null else global_pos
 
 func _ready() -> void: 
 	if back:
-		.flip()
+		flip()
 		
 	calculate_trajectory(end)
 	
@@ -32,27 +35,20 @@ func _physics_process(delta: float) -> void:
 	
 	if back:
 		if delta > offset:
-			flip()
+			end_reached()
 			offset = delta - offset
 		else:
 			offset -= delta
 	else:
 		if delta > total_time - offset:
-			flip()
+			end_reached()
 			offset = 2 * total_time - offset - delta
 		else:
 			offset += delta
 	
 	var x = speed * offset
 	var y = amplitude * cos(frequency * offset)	
-	
-	if back:
-		if x <= 0:
-			flip()
-	else:
-		if x >= length:
-			flip()
-			
+				
 	global_position = start + x * direction + y * perpendicular
 	
 
@@ -70,6 +66,7 @@ func calculate_trajectory(end: Vector2) -> void:
 	offset = unit_offset * total_time
 	
 
-func flip() -> void:
+func end_reached() -> void:
 	back = not back
-	.flip()
+	flip()
+	emit_signal("end_reached")

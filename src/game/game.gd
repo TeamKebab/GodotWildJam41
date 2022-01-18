@@ -29,6 +29,11 @@ func _ready() -> void:
 	play_music(main_score)
 
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and event.scancode == KEY_R:
+		get_tree().reload_current_scene()
+
+
 func restart() -> void:
 	play_music(main_score)
 	go_to(Scene.Start)
