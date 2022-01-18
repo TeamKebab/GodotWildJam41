@@ -11,6 +11,7 @@ func enter() -> void:
 	
 	
 func exit() -> void:
+	harpoon.anchored_fish.release()
 	harpoon.anchored_fish = null
 	
 

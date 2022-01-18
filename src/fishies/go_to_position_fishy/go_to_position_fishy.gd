@@ -9,22 +9,21 @@ export var back:= false
 
 
 var offset:= 0.0 
+var start: Vector2
+var length: float
+var total_time: float
 
-onready var start: Vector2 = global_position
+var direction: Vector2
+var perpendicular: Vector2
+
 onready var end: Vector2 =  $End.global_position if $End != null else global_position
-onready var length: float = start.distance_to(end)
-onready var total_time: float = length / speed
-
-onready var direction: Vector2 = start.direction_to(end)
-onready var perpendicular: Vector2 = direction.rotated(PI / 2)
 
 
 func _ready() -> void: 
 	if back:
 		.flip()
 		
-	if length > 0:
-		offset = unit_offset * total_time
+	calculate_trajectory(end)
 	
 
 func _physics_process(delta: float) -> void:
@@ -55,6 +54,20 @@ func _physics_process(delta: float) -> void:
 			flip()
 			
 	global_position = start + x * direction + y * perpendicular
+	
+
+func calculate_trajectory(end: Vector2) -> void:
+	start = global_position
+	length = start.distance_to(end)
+	
+	if length == 0:
+		return
+	
+	total_time = length / speed
+	direction = start.direction_to(end)
+	perpendicular = direction.rotated(PI / 2)
+	
+	offset = unit_offset * total_time
 	
 
 func flip() -> void:
