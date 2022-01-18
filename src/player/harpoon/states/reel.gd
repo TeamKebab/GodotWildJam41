@@ -19,7 +19,7 @@ func update(delta: float) -> void:
 		harpoon.position += (harpoon.player.global_position - harpoon.global_position).normalized() * harpoon.speed * delta
 		
 
-func _on_fish_hit(fish: Area2D) -> void:
+func _on_fish_hit(fish: Fish) -> void:
 	harpoon.anchor(fish)
 	emit_signal("finished", "Anchor")
 	

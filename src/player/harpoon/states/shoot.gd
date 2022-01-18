@@ -22,7 +22,7 @@ func update(delta: float) -> void:
 		harpoon.position += motion * delta
 
 
-func _on_fish_hit(fish: Area2D) -> void:
+func _on_fish_hit(fish: Fish) -> void:
 	harpoon.anchor(fish)
 	emit_signal("finished", "Anchor")
 	
