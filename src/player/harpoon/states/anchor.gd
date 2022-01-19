@@ -9,6 +9,9 @@ onready var latch_sound = $LatchSound
 func enter() -> void:
 	latch_sound.play()
 	yield(latch_sound, "finished")
+	if harpoon.anchored_fish == null:
+		return
+		
 	harpoon.anchored_fish.hook()
 	harpoon.anchored_fish.connect("run_away", self, "_on_fish_ran_away")
 	enter_finished = true

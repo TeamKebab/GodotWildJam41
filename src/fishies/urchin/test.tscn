@@ -24,6 +24,9 @@ position = Vector2( 76, 95 )
 [node name="Urchin3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 159, 143 )
 
+[node name="Urchin4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 165, 100 )
+
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 145, 80 )
 
