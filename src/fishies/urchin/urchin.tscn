@@ -9,6 +9,7 @@ radius = 11.0
 
 [node name="Urchin" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+bounce_speed = 30
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )
