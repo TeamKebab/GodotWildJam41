@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fishies/anglerfish/anglerfish.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://fishies/clownfish/clownfish.tscn" type="PackedScene" id=5]
 [ext_resource path="res://fishies/vertical_fish/vertical_fish.tscn" type="PackedScene" id=6]
 [ext_resource path="res://fishies/anglerfish/darkness.gdshader" type="Shader" id=7]
-[ext_resource path="res://fishies/anglerfish/big_light.png" type="Texture" id=8]
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 7 )
@@ -100,12 +99,12 @@ unit_offset = 0.4
 position = Vector2( 372, 2.99963 )
 
 [node name="VerticalFish3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 200, 581 )
+position = Vector2( 190, 769 )
 rotation = -1.5708
 unit_offset = 0.85
 
 [node name="End" type="Position2D" parent="VerticalFish3"]
-position = Vector2( 466, 4.00171 )
+position = Vector2( 674, 4.00244 )
 
 [node name="Anglerfish" parent="." instance=ExtResource( 2 )]
 position = Vector2( 182, 152 )
@@ -131,11 +130,5 @@ color = Color( 0.0117647, 0.0823529, 0.0980392, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Light2D" type="Light2D" parent="."]
-visible = false
-position = Vector2( 326, 466 )
-texture = ExtResource( 8 )
-texture_scale = 0.58
 
 [editable path="Player"]
