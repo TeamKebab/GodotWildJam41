@@ -8,7 +8,7 @@ export var float_speed: int = 70
 onready var animation: AnimationPlayer = $AnimationPlayer
 onready var start_position:= global_position
 onready var base_speed:= speed
-
+onready var visibility_notifier: VisibilityNotifier2D = $VisibilityNotifier2D
 
 func _ready() -> void:
 	connect("hooked", self, "_on_hooked")
@@ -37,9 +37,9 @@ func blow_up() -> void:
 	unit_offset = 0
 	back = false
 	scale.x = 1
-	calculate_trajectory(Vector2(global_position.x, 0))
+	calculate_trajectory(Vector2(global_position.x, -2000))
 	
-	yield(self, "end_reached")
+	yield(visibility_notifier, "screen_exited")
 	emit_signal("run_away")
 	reset()
 	
