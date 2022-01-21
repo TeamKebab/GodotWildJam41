@@ -237,6 +237,14 @@ back = true
 [node name="End" type="Position2D" parent="Fishies/Clownfish29"]
 position = Vector2( 92, 2 )
 
+[node name="Clownfish30" parent="Fishies" instance=ExtResource( 7 )]
+position = Vector2( 108, 2214 )
+script = SubResource( 1 )
+unit_offset = 0.65
+
+[node name="End" type="Position2D" parent="Fishies/Clownfish30"]
+position = Vector2( 92, 2 )
+
 [node name="Clownfish8" parent="Fishies" instance=ExtResource( 7 )]
 position = Vector2( 39, 266 )
 script = SubResource( 1 )
@@ -956,11 +964,8 @@ position = Vector2( 57, 2324 )
 [node name="Urchin172" parent="Fishies" instance=ExtResource( 5 )]
 position = Vector2( 40, 2308 )
 
-[node name="Urchin173" parent="Fishies" instance=ExtResource( 5 )]
-position = Vector2( 110, 2250 )
-
 [node name="Urchin176" parent="Fishies" instance=ExtResource( 5 )]
-position = Vector2( 154, 2180 )
+position = Vector2( 157, 2248 )
 
 [node name="Urchin177" parent="Fishies" instance=ExtResource( 5 )]
 position = Vector2( 68, 2179 )
@@ -972,13 +977,10 @@ position = Vector2( 241, 2179 )
 position = Vector2( 155, 2108 )
 
 [node name="Urchin180" parent="Fishies" instance=ExtResource( 5 )]
-position = Vector2( 110, 2012 )
+position = Vector2( 101, 2005 )
 
 [node name="Urchin181" parent="Fishies" instance=ExtResource( 5 )]
-position = Vector2( 195, 2010 )
-
-[node name="Urchin175" parent="Fishies" instance=ExtResource( 5 )]
-position = Vector2( 203, 2250 )
+position = Vector2( 203, 2004 )
 
 [node name="Urchin153" parent="Fishies" instance=ExtResource( 5 )]
 position = Vector2( 264, 2345 )
@@ -1198,6 +1200,20 @@ position = Vector2( 190, 2218 )
 [node name="End" type="Position2D" parent="Fishies/Blowfish9"]
 position = Vector2( 61, -1 )
 
+[node name="Blowfish14" parent="Fishies" instance=ExtResource( 10 )]
+position = Vector2( 197, 2131 )
+back = true
+
+[node name="End" type="Position2D" parent="Fishies/Blowfish14"]
+position = Vector2( 61, -1 )
+
+[node name="Blowfish15" parent="Fishies" instance=ExtResource( 10 )]
+position = Vector2( 46, 2133 )
+unit_offset = 0.45
+
+[node name="End" type="Position2D" parent="Fishies/Blowfish15"]
+position = Vector2( 61, -1 )
+
 [node name="Blowfish10" parent="Fishies" instance=ExtResource( 10 )]
 position = Vector2( 129, 2286 )
 
@@ -1388,7 +1404,7 @@ position = Vector2( 58, 2753 )
 position = Vector2( 205, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 151, 2501 )
+position = Vector2( 152, 33 )
 
 [node name="Harpoon" parent="." instance=ExtResource( 3 )]
 
@@ -1418,6 +1434,7 @@ __meta__ = {
 }
 
 [node name="Level3" type="ColorRect" parent="Darkness"]
+visible = false
 material = SubResource( 5 )
 margin_left = -100.0
 margin_top = 1600.0
