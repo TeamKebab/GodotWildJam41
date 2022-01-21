@@ -20,7 +20,7 @@ func reset() -> void:
 	speed = base_speed
 	unit_offset = 0
 	back = false
-	sprite.flip_h = false
+	scale.x = 1
 	rotation = 0
 	animation.play("Idle")
 	calculate_trajectory(end)
@@ -36,7 +36,7 @@ func blow_up() -> void:
 	speed = float_speed
 	unit_offset = 0
 	back = false
-	sprite.flip_h = false
+	scale.x = 1
 	calculate_trajectory(Vector2(global_position.x, 0))
 	
 	yield(self, "end_reached")
