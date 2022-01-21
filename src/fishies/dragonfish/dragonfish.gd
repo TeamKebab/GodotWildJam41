@@ -12,7 +12,9 @@ func _ready() -> void:
 func _on_hooked() -> void:
 	# todo: show count down animation?
 	yield(get_tree().create_timer(throw_off_delay), "timeout")
-	# throw  player off if still attached
+	
+	if hooked:
+		emit_signal("run_away")
 
 
 func _on_released() -> void:

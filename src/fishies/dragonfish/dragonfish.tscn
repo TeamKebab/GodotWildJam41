@@ -28,6 +28,7 @@ tracks/0/keys = {
 [node name="Dragonfish" instance=ExtResource( 2 )]
 position = Vector2( -1, 0 )
 script = ExtResource( 3 )
+speed = 50
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 1 )
