@@ -24,7 +24,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://components/scene_loader/scene_loader.gd"
 }, {
-"base": "Fish",
+"base": "Area2D",
 "class": "Urchin",
 "language": "GDScript",
 "path": "res://fishies/urchin/urchin.gd"
