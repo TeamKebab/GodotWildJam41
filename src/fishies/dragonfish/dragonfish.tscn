@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://fishies/clownfish/clownfish.png" type="Texture" id=1]
 [ext_resource path="res://fishies/go_to_position_fishy/go_to_position_fishy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fishies/dragonfish/dragonfish.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 6.0
@@ -24,7 +25,9 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[node name="Clownfish" instance=ExtResource( 2 )]
+[node name="Dragonfish" instance=ExtResource( 2 )]
+position = Vector2( -1, 0 )
+script = ExtResource( 3 )
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 1 )
