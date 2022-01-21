@@ -241,6 +241,9 @@ tracks/7/keys = {
 
 [node name="Anglerfish" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
+speed = 8
+amplitude = 5
+frequency = 2
 light_up_delay = 0.0
 
 [node name="Sprite" parent="." index="0"]
@@ -271,6 +274,7 @@ visible = false
 position = Vector2( 13.0555, 4.02868 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 5 )
+texture_scale = 0.1
 energy = 0.8
 
 [node name="SmallLight" type="Light2D" parent="Angler" index="1"]

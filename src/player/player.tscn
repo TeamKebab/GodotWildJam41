@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://player/collide.wav" type="AudioStream" id=1]
+[ext_resource path="res://fishies/anglerfish/light.png" type="Texture" id=2]
 [ext_resource path="res://player/floaty_animation.tres" type="Animation" id=3]
 [ext_resource path="res://player/player.png" type="Texture" id=4]
 [ext_resource path="res://player/player.gd" type="Script" id=5]
@@ -30,6 +31,11 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -0.0752163, -0.0745474 )
 texture = ExtResource( 4 )
+
+[node name="SmallLight" type="Light2D" parent="Sprite"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+energy = 0.8
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
