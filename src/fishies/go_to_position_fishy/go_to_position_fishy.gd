@@ -24,7 +24,7 @@ onready var end: Vector2 =  $End.global_position if $End != null else global_pos
 
 func _ready() -> void: 
 	if back:
-		flip()
+		scale.x = -1
 		
 	calculate_trajectory(end)
 	
