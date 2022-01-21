@@ -71,7 +71,7 @@ func float_up(delta: float) -> void:
 	
 
 func is_reeling_in() -> bool:
-	return Input.is_mouse_button_pressed(BUTTON_RIGHT)
+	return Input.is_action_pressed("reelin")
 
 
 func urchin_hit(urchin: Urchin) -> void:
