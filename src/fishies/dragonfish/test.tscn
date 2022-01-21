@@ -32,7 +32,6 @@ position = Vector2( 157, -66 )
 
 [node name="Dragonfish2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 74, 177 )
-down = true
 
 [node name="End" type="Position2D" parent="Dragonfish2"]
 position = Vector2( 163, 74 )

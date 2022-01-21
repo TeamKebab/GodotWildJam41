@@ -2,12 +2,14 @@ extends "res://fishies/go_to_position_fishy/go_to_position_fishy.gd"
 
 
 export var throw_off_delay:= 1.5
-export var down:= false
+
+var down:= false
 
 onready var animation: AnimationPlayer = $AnimationPlayer
 
-
 func _ready() -> void:
+	down = end.y > start.y
+	
 	connect("hooked", self, "_on_hooked")
 	connect("released", self, "_on_released")
 	update_animation()
