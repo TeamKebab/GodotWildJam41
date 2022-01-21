@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://levels/hill_autotile.tres" type="TileSet" id=1]
 [ext_resource path="res://fishies/urchin/urchin.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://player/harpoon/harpoon.tscn" type="PackedScene" id=4]
+[ext_resource path="res://fishies/clownfish/clownfish.tscn" type="PackedScene" id=5]
 
 [node name="Test" type="Node"]
 
@@ -31,3 +32,15 @@ position = Vector2( 165, 100 )
 position = Vector2( 145, 80 )
 
 [node name="Harpoon" parent="." instance=ExtResource( 4 )]
+
+[node name="Clownfish" parent="." instance=ExtResource( 5 )]
+position = Vector2( 89, 46 )
+
+[node name="End" type="Position2D" parent="Clownfish"]
+position = Vector2( 127, 1 )
+
+[node name="Clownfish2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 89, 119 )
+
+[node name="End" type="Position2D" parent="Clownfish2"]
+position = Vector2( 127, 1 )

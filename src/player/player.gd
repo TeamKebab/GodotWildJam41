@@ -104,6 +104,6 @@ func urchin_hit(urchin: Urchin) -> void:
 
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	if area.get_parent() is Urchin:
-		urchin_hit(area.get_parent())
+	if area is Urchin:
+		urchin_hit(area)
 		
