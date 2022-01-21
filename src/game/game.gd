@@ -3,6 +3,7 @@ extends Node
 
 enum Scene {
 	Start,
+	Win,
 	Level_01,
 }
 
@@ -23,6 +24,7 @@ func _ready() -> void:
 	
 	scene_loader.scenes = {
 		Scene.Start : "res://main.tscn",
+		Scene.Win: "res://win_screen/win_screen.tscn",
 		Scene.Level_01 : "res://main.tscn",
 	}	
 	

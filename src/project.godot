@@ -85,6 +85,7 @@ texture={
 2d_physics/layer_2="fishies"
 2d_physics/layer_3="walls"
 2d_physics/layer_4="fish hitbox"
+2d_physics/layer_5="player"
 
 [physics]
 
