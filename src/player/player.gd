@@ -75,6 +75,7 @@ func is_reeling_in() -> bool:
 
 
 func urchin_hit(urchin: Urchin) -> void:
+	Game.stat("urchin")
 	harpoon.disable()
 	motion = urchin.global_position.direction_to(global_position) * urchin.bounce_speed
 	

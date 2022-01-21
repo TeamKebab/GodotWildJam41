@@ -13,8 +13,11 @@ const main_score = preload("res://game/main_score.mp3")
 
 export var show_puns := true
 
+var total_mseconds:= 0
+var stats:= {}
 var hooked_fishes := []
 
+var start_time
 
 onready var scene_loader = $SceneLoader
 onready var popup: Popup = $CanvasLayer/Popup
@@ -29,6 +32,8 @@ func _ready() -> void:
 	}	
 	
 	play_music(main_score)
+	
+	start_time = OS.get_ticks_msec()
 
 
 func _input(event: InputEvent) -> void:
@@ -36,10 +41,19 @@ func _input(event: InputEvent) -> void:
 		get_tree().reload_current_scene()
 
 
+func stat(type: String) -> void:
+	if type in stats:
+		stats[type] += 1
+	else:
+		stats[type] = 1
+	
+
 func restart() -> void:
 	play_music(main_score)
 	go_to(Scene.Start)
 	hooked_fishes = []
+	stats = {}
+	total_mseconds = 0
 
 
 func play_music(stream: AudioStream) -> void:
@@ -52,11 +66,23 @@ func go_to(scene_id: int, startup_data = null) -> void:
 
 
 func fish_hooked(type: String) -> void:
+	stat("fish")
+	
 	if show_puns and not hooked_fishes.has(type):
 		hooked_fishes.append(type)
-		get_tree().paused = true
+		pause()
 		popup.popup_centered_minsize()
 
 
+func pause() -> void:
+	get_tree().paused = true
+	stop_timer()
+	
+
 func continue() -> void:
+	start_time = OS.get_ticks_msec()
 	get_tree().paused = false
+
+
+func stop_timer() -> void:
+	total_mseconds += OS.get_ticks_msec() - start_time
