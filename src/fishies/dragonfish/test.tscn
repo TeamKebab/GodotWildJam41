@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://fishies/dragonfish/dragonfish.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player/harpoon/harpoon.tscn" type="PackedScene" id=3]
 [ext_resource path="res://levels/hill_autotile.tres" type="TileSet" id=4]
+[ext_resource path="res://fishies/anglerfish/darkness.gdshader" type="Shader" id=5]
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 5 )
+shader_param/gradient_start = 0.2
+shader_param/gradient_end = 0.6
+shader_param/light_color = Color( 0.294118, 0.313726, 0.607843, 1 )
+shader_param/dark_color = Color( 0.0196078, 0.0313726, 0.141176, 1 )
 
 [node name="Test" type="Node"]
 
@@ -24,9 +32,10 @@ position = Vector2( 157, -66 )
 
 [node name="Dragonfish2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 74, 177 )
+down = true
 
 [node name="End" type="Position2D" parent="Dragonfish2"]
-position = Vector2( 156, 67 )
+position = Vector2( 163, 74 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 145, 80 )
@@ -35,5 +44,16 @@ position = Vector2( 145, 80 )
 zoom = Vector2( 2, 2 )
 
 [node name="Harpoon" parent="." instance=ExtResource( 3 )]
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+material = SubResource( 3 )
+margin_left = -100.0
+margin_top = -150.0
+margin_right = 400.0
+margin_bottom = 826.0
+color = Color( 0.0117647, 0.0823529, 0.0980392, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [editable path="Player"]

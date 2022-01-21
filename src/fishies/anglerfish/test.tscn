@@ -108,6 +108,7 @@ position = Vector2( 674, 4.00244 )
 
 [node name="Anglerfish" parent="." instance=ExtResource( 2 )]
 position = Vector2( 182, 152 )
+back = true
 
 [node name="Anglerfish2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 185, 725 )

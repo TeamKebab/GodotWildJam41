@@ -12,11 +12,8 @@ var hooked := false
 export var type := "Default"
 
 
-onready var sprite: Sprite = $Sprite
-
-
 func flip() -> void:
-	sprite.flip_h = not sprite.flip_h
+	scale.x = - scale.x
 
 
 func hook() -> void:
