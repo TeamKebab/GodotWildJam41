@@ -44,6 +44,7 @@ tracks/0/keys = {
 
 [node name="Blowfish" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+blow_up_delay = 1.0
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )
