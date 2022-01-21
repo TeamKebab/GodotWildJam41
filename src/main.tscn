@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fishies/vertical_fish/vertical_fish.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://fishies/urchin/urchin.tscn" type="PackedScene" id=5]
 [ext_resource path="res://main.gd" type="Script" id=6]
 [ext_resource path="res://fishies/clownfish/clownfish.tscn" type="PackedScene" id=7]
-[ext_resource path="res://fishies/dragonfish/dragonfish.tscn" type="PackedScene" id=8]
 [ext_resource path="res://fishies/anglerfish/darkness.gdshader" type="Shader" id=9]
 
 [sub_resource type="GDScript" id=1]
@@ -758,42 +757,42 @@ position = Vector2( 113, 1577 )
 [node name="Urchin125" parent="Fishies" instance=ExtResource( 5 )]
 position = Vector2( 196, 1597 )
 
-[node name="Dragonfish18" parent="Fishies" instance=ExtResource( 8 )]
+[node name="Clownfish18" parent="Fishies" instance=ExtResource( 7 )]
 position = Vector2( 47, 940 )
 unit_offset = 0.45
 
-[node name="End" type="Position2D" parent="Fishies/Dragonfish18"]
+[node name="End" type="Position2D" parent="Fishies/Clownfish18"]
 position = Vector2( 88, 72 )
 
-[node name="Dragonfish21" parent="Fishies" instance=ExtResource( 8 )]
+[node name="Clownfish21" parent="Fishies" instance=ExtResource( 7 )]
 position = Vector2( 152, 1157 )
 unit_offset = 0.45
 
-[node name="End" type="Position2D" parent="Fishies/Dragonfish21"]
+[node name="End" type="Position2D" parent="Fishies/Clownfish21"]
 position = Vector2( 86, 61 )
 
-[node name="Dragonfish19" parent="Fishies" instance=ExtResource( 8 )]
+[node name="Clownfish19" parent="Fishies" instance=ExtResource( 7 )]
 position = Vector2( 179, 1015 )
 unit_offset = 0.15
 back = true
 
-[node name="End" type="Position2D" parent="Fishies/Dragonfish19"]
+[node name="End" type="Position2D" parent="Fishies/Clownfish19"]
 position = Vector2( 77, -82 )
 
-[node name="Dragonfish20" parent="Fishies" instance=ExtResource( 8 )]
+[node name="Clownfish20" parent="Fishies" instance=ExtResource( 7 )]
 position = Vector2( 75, 1223 )
 unit_offset = 0.15
 back = true
 
-[node name="End" type="Position2D" parent="Fishies/Dragonfish20"]
+[node name="End" type="Position2D" parent="Fishies/Clownfish20"]
 position = Vector2( 77, -82 )
 
-[node name="Dragonfish23" parent="Fishies" instance=ExtResource( 8 )]
+[node name="Clownfish23" parent="Fishies" instance=ExtResource( 7 )]
 position = Vector2( 160, 1432 )
 unit_offset = 0.15
 back = true
 
-[node name="End" type="Position2D" parent="Fishies/Dragonfish23"]
+[node name="End" type="Position2D" parent="Fishies/Clownfish23"]
 position = Vector2( 77, -82 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
