@@ -7,6 +7,7 @@ amount = 10
 lifetime = 61.54
 randomness = 0.47
 lifetime_randomness = 0.24
+local_coords = false
 texture = ExtResource( 1 )
 direction = Vector2( 0, -1 )
 spread = 15.62
