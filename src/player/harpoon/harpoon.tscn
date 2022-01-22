@@ -58,14 +58,14 @@ script = ExtResource( 4 )
 [node name="Shoot" type="Node" parent="StateMachine"]
 script = ExtResource( 5 )
 
-[node name="ShootSound" type="AudioStreamPlayer2D" parent="StateMachine/Shoot"]
+[node name="ShootSound" type="AudioStreamPlayer" parent="StateMachine/Shoot"]
 stream = ExtResource( 10 )
 bus = "Sounds"
 
 [node name="Anchor" type="Node" parent="StateMachine"]
 script = ExtResource( 6 )
 
-[node name="LatchSound" type="AudioStreamPlayer2D" parent="StateMachine/Anchor"]
+[node name="LatchSound" type="AudioStreamPlayer" parent="StateMachine/Anchor"]
 stream = ExtResource( 11 )
 bus = "Sounds"
 
