@@ -309,9 +309,7 @@ frame = 1
 [node name="BigLight" type="Light2D" parent="Angler" index="0"]
 visible = false
 position = Vector2( 13.0555, 4.02868 )
-scale = Vector2( 4, 4 )
 texture = ExtResource( 5 )
-texture_scale = 0.1
 energy = 0.8
 
 [node name="SmallLight" type="Light2D" parent="Angler" index="1"]
