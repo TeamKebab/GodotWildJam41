@@ -1445,7 +1445,6 @@ __meta__ = {
 }
 
 [node name="Level4" type="ColorRect" parent="Darkness"]
-visible = false
 material = SubResource( 6 )
 margin_left = -100.0
 margin_top = 2400.0

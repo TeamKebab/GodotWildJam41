@@ -12,7 +12,7 @@ radius = 14.0
 
 [sub_resource type="Animation" id=4]
 resource_name = "Caught"
-length = 0.4
+length = 0.8
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -21,10 +21,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 2, 1, 2 ]
+"values": [ 1, 2, 1, 2, 1, 2, 1, 2 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Angler:frame")
@@ -33,10 +33,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 1 ]
+"values": [ 0, 1, 2, 3, 4, 3, 2, 1 ]
 }
 tracks/2/type = "bezier"
 tracks/2/path = NodePath("Angler/BigLight:position:x")
@@ -45,8 +45,8 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"points": PoolRealArray( 10.0555, -0.05, 0, 0.05, 0, 13.0555, -0.05, 0, 0.05, 0, 13.0555, -0.05, 0, 0.05, 0, 13.0555, -0.05, 0, 0.05, 0, 10.0555, -0.05, 0, 0.05, 0 ),
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 )
+"points": PoolRealArray( 2, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 13, -0.25, 0, 0.25, 0, 16, -0.25, 0, 0.25, 0, 15, -0.25, 0, 0.25, 0, 16, -0.25, 0, 0.25, 0, 13, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 )
 }
 tracks/3/type = "bezier"
 tracks/3/path = NodePath("Angler/BigLight:position:y")
@@ -55,8 +55,8 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"points": PoolRealArray( 13.0287, -0.05, 0, 0.05, 0, 4.02868, -0.05, 0, 0.05, 0, -12.9713, -0.05, 0, 0.05, 0, 4.02868, -0.05, 0, 0.05, 0, 13.0287, -0.05, 0, 0.05, 0 ),
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 )
+"points": PoolRealArray( 17, -0.25, 0, 0.25, 0, 15, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, -11, -0.25, 0, 0.25, 0, -13, -0.25, 0, 0.25, 0, -11, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, 15, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 )
 }
 tracks/4/type = "bezier"
 tracks/4/path = NodePath("Angler/SmallLight:position:x")
@@ -65,8 +65,8 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"points": PoolRealArray( 10.0555, -0.05, 0, 0.05, 0, 13.0555, -0.05, 0, 0.05, 0, 13.0555, -0.05, 0, 0.05, 0, 13.0555, -0.05, 0, 0.05, 0, 10.0555, -0.05, 0, 0.05, 0 ),
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 )
+"points": PoolRealArray( 2, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 13, -0.25, 0, 0.25, 0, 16, -0.25, 0, 0.25, 0, 15, -0.25, 0, 0.25, 0, 16, -0.25, 0, 0.25, 0, 13, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 )
 }
 tracks/5/type = "bezier"
 tracks/5/path = NodePath("Angler/SmallLight:position:y")
@@ -75,14 +75,27 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"points": PoolRealArray( 13.0287, -0.05, 0, 0.05, 0, 4.02868, -0.05, 0, 0.05, 0, -12.9713, -0.05, 0, 0.05, 0, 4.02868, -0.05, 0, 0.05, 0, 13.0287, -0.05, 0, 0.05, 0 ),
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 )
+"points": PoolRealArray( 17, -0.25, 0, 0.25, 0, 15, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, -11, -0.25, 0, 0.25, 0, -13, -0.25, 0, 0.25, 0, -11, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, 15, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Angler:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 20, -24 ) ]
 }
 
 [sub_resource type="Animation" id=2]
 resource_name = "Idle"
 length = 1.6
 loop = true
+step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -102,8 +115,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( 10.9445, -0.25, 0, 0.173539, 0.261772, 13.0046, -0.150282, -0.891205, 0.146703, 0.825994, 15.0333, -0.103766, 0.0434732, 0.146703, -0.13042, 13.0227, -0.137758, 1.19552, 0.150282, -1.01438, 10.9879, -0.15386, 0.347788, 0.25, 0 ),
-"times": PoolRealArray( 0.00357813, 0.406118, 0.801502, 1.18257, 1.59048 )
+"points": PoolRealArray( 18, -0.25, 0, 0.25, 0, 23, -0.35, 0, 0.35, 0, 18, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.8, 1.6 )
 }
 tracks/2/type = "bezier"
 tracks/2/path = NodePath("Angler:position:y")
@@ -112,8 +125,8 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"points": PoolRealArray( -15.0287, -0.25, 0, 0.103893, 0.0427361, -13.006, -0.1, 0.00820351, 0.1, -0.00991058, -16.2849, -0.171051, 0.0724087, 0.150282, 0.108973, -13.0362, -0.1, -0.0571566, 0.1, -0.0571566, -15.0328, -0.1, 0.0334911, 0.05, 0 ),
-"times": PoolRealArray( 0.00178907, 0.398962, 0.778244, 1.20046, 1.5869 )
+"points": PoolRealArray( -19, -0.25, 0, 0.25, 0, -16.5569, -0.1, 0.00820351, 0.1, -0.00991058, -19, -0.171051, 0.0724087, 0.150282, 0.108973, -16.5569, -0.1, -0.0571566, 0.1, -0.0571566, -19, -0.1, 0.0334911, 0.05, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2, 1.6 )
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Angler:frame")
@@ -137,7 +150,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 10.0555, 13.0287 ) ]
+"values": [ Vector2( 2, 17 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Angler/SmallLight:position")
@@ -149,7 +162,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 10.0555, 13.0287 ) ]
+"values": [ Vector2( 2, 17 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -238,6 +251,30 @@ tracks/7/keys = {
 "points": PoolRealArray( 4.02868, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("Angler/BigLight:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2, 17 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Angler/SmallLight:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2, 17 ) ]
+}
 
 [node name="Anglerfish" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
@@ -266,7 +303,7 @@ anims/RESET = SubResource( 3 )
 show_behind_parent = true
 position = Vector2( 9, -13 )
 texture = ExtResource( 6 )
-hframes = 3
+hframes = 5
 frame = 1
 
 [node name="BigLight" type="Light2D" parent="Angler" index="0"]
