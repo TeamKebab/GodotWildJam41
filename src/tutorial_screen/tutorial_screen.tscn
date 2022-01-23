@@ -1,0 +1,446 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://fishies/clownfish/clownfish.png" type="Texture" id=1]
+[ext_resource path="res://themes/fonts/Retro5.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://tutorial_screen/shoot_tutorial.gd" type="Script" id=3]
+[ext_resource path="res://player/harpoon/harpoon.png" type="Texture" id=4]
+[ext_resource path="res://player/harpoon/chain.png" type="Texture" id=5]
+[ext_resource path="res://player/player.png" type="Texture" id=6]
+[ext_resource path="res://tutorial_screen/mouse.png" type="Texture" id=7]
+[ext_resource path="res://tutorial_screen/click.png" type="Texture" id=8]
+[ext_resource path="res://levels/background/bg_02.png" type="Texture" id=9]
+[ext_resource path="res://tutorial_screen/tutorial_screen.gd" type="Script" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+Label/colors/font_color = Color( 0.0470588, 0.184314, 0.305882, 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Default"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Click:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.4, 0.5, 0.6, 0.7, 0.8, 2.1, 2.2, 2.3, 2.4, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 0, 1, 2, 3, 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Click:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4, 0.9, 2.1, 4.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Harpoon:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.9, 4.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Harpoon:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 16, -0.25, 0, 0.25, 0, 60, -0.25, 0, 0.25, 0, 60, -0.25, 0, 0.25, 0, 16, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.9, 1.4, 4.2, 4.3 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Harpoon:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( -9, -0.25, 0, 0.25, 0, -39, -0.25, 0, 0.25, 0, -39, -0.25, 0, 0.25, 0, -9, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.9, 1.4, 4.2, 4.3 )
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Chain:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 4.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("MouseLeft:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Click:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1, 2, 4.2, 4.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 65, -38 ), Vector2( 65, -38 ), Vector2( 105, -23 ), Vector2( 105, -23 ), Vector2( 65, -38 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Player:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 2.4, 4.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 13.8675, -9.245 ), Vector2( 13.8675, -9.245 ), Vector2( 46, -30 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Fishy:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 4.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Player:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 4.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("MouseRight:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 2.1, 4.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("../MarginContainer/Label:text")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 1.9, 4.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "Shoot", "Reel in", "Shoot" ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("../MarginContainer/Label:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 4.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Click:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Click:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Harpoon:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 16, -9 ) ]
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Harpoon:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 60, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Harpoon:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( -39, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Harpoon:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Chain:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("MouseLeft:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Click:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 105, -23 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Player:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 46, -30 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Player:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Fishy:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("MouseRight:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("../MarginContainer/Label:text")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "Reel in" ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("../MarginContainer/Label:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[node name="TutorialScreen" type="Node"]
+script = ExtResource( 10 )
+
+[node name="Bg02" type="Sprite" parent="."]
+position = Vector2( 147, 305 )
+texture = ExtResource( 9 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 2 )
+custom_constants/margin_top = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer"]
+visible = false
+margin_top = 50.0
+margin_right = 256.0
+margin_bottom = 63.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Reel in"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShootTutorial" type="Node2D" parent="."]
+position = Vector2( 75, 124 )
+script = ExtResource( 3 )
+
+[node name="Fishy" type="Sprite" parent="ShootTutorial"]
+position = Vector2( 70, -46 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="Player" type="Sprite" parent="ShootTutorial"]
+position = Vector2( 46, -30 )
+texture = ExtResource( 6 )
+
+[node name="Chain" type="Line2D" parent="ShootTutorial"]
+points = PoolVector2Array( 46, -30, 60, -39 )
+width = 3.0
+default_color = Color( 1, 1, 1, 1 )
+texture = ExtResource( 5 )
+texture_mode = 1
+
+[node name="Harpoon" type="Sprite" parent="ShootTutorial"]
+visible = false
+position = Vector2( 60, -39 )
+rotation = -2.1588
+texture = ExtResource( 4 )
+offset = Vector2( -0.0104446, 4.06641 )
+
+[node name="Click" type="Sprite" parent="ShootTutorial"]
+visible = false
+position = Vector2( 105, -23 )
+texture = ExtResource( 8 )
+hframes = 5
+frame = 1
+
+[node name="MouseLeft" type="Sprite" parent="ShootTutorial"]
+visible = false
+position = Vector2( 91, -17 )
+texture = ExtResource( 7 )
+
+[node name="MouseRight" type="Sprite" parent="ShootTutorial"]
+position = Vector2( 133, 2 )
+texture = ExtResource( 7 )
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ShootTutorial"]
+autoplay = "Default"
+anims/Default = SubResource( 3 )
+anims/RESET = SubResource( 4 )
