@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://win_screen/player/player.gd" type="Script" id=1]
+[ext_resource path="res://fishies/anglerfish/light.png" type="Texture" id=2]
+[ext_resource path="res://player/player.png" type="Texture" id=3]
+[ext_resource path="res://bubbles/bubble.tscn" type="PackedScene" id=4]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 7.0
+height = 4.0
+
+[node name="Player" type="KinematicBody2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource( 1 )
+speed = 40
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.0752163, -0.0745474 )
+texture = ExtResource( 3 )
+
+[node name="SmallLight" type="Light2D" parent="Sprite"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+energy = 0.8
+
+[node name="Bubbles" parent="." instance=ExtResource( 4 )]
+amount = 30
