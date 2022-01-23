@@ -4,6 +4,7 @@ class_name Fish
 
 signal hooked
 signal released
+# warning-ignore:unused_signal
 signal run_away
 
 

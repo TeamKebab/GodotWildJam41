@@ -18,11 +18,13 @@ var total_time: float
 
 var direction: Vector2
 var perpendicular: Vector2
-
-onready var end: Vector2 =  $End.global_position if $End != null else global_position
+var end: Vector2
 
 
 func _ready() -> void: 
+	var end_node = find_node("End")
+	end = end_node.global_position if end_node != null else global_position
+		
 	if back:
 		scale.x = -1
 		
@@ -52,15 +54,15 @@ func _physics_process(delta: float) -> void:
 	global_position = start + x * direction + y * perpendicular
 	
 
-func calculate_trajectory(end: Vector2) -> void:
+func calculate_trajectory(new_end: Vector2) -> void:
 	start = global_position
-	length = start.distance_to(end)
+	length = start.distance_to(new_end)
 	
 	if length == 0:
 		return
 	
 	total_time = length / speed
-	direction = start.direction_to(end)
+	direction = start.direction_to(new_end)
 	perpendicular = direction.rotated(PI / 2)
 	
 	offset = unit_offset * total_time

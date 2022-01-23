@@ -58,6 +58,5 @@ func _physics_process(delta: float) -> void:
 
 func _draw():
 	if debugging:
-		var some_points = Array(points)
 		draw_line(start, end, Color.red, 3)
 	

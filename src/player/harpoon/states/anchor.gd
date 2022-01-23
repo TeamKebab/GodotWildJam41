@@ -9,6 +9,7 @@ onready var latch_sound = $LatchSound
 func enter() -> void:
 	latch_sound.play()
 	yield(latch_sound, "finished")
+	
 	if harpoon.anchored_fish == null:
 		return
 		
@@ -18,15 +19,20 @@ func enter() -> void:
 	
 	
 func exit() -> void:
+	if enter_finished:
+		harpoon.anchored_fish.disconnect("run_away", self, "_on_fish_ran_away")
+	
+	if harpoon.anchored_fish != null:
+		harpoon.anchored_fish.release()
+		harpoon.anchored_fish = null
+	
 	enter_finished = false
-	harpoon.anchored_fish.disconnect("run_away", self, "_on_fish_ran_away")
-	harpoon.anchored_fish.release()
-	harpoon.anchored_fish = null
 	
 
-func update(delta: float) -> void:
-	harpoon.global_position = harpoon.anchored_fish.global_position
-	harpoon.point()
+func update(_delta: float) -> void:
+	if harpoon.anchored_fish != null:
+		harpoon.global_position = harpoon.anchored_fish.global_position
+		harpoon.point()
 	
 
 func shoot() -> void:
