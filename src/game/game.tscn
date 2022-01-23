@@ -53,6 +53,7 @@ texture = SubResource( 1 )
 [node name="RichTextLabel" parent="CanvasLayer/Anglerfish/VBoxContainer" index="1"]
 margin_top = 47.0
 margin_bottom = 61.0
+text = "Pacifisht fishes from the abyss. Hook them to enlighten your way!"
 
 [node name="Button" parent="CanvasLayer/Anglerfish/VBoxContainer" index="2"]
 margin_top = 65.0
@@ -73,6 +74,7 @@ texture = SubResource( 2 )
 [node name="RichTextLabel" parent="CanvasLayer/Blowfish/VBoxContainer" index="1"]
 margin_top = 36.0
 margin_bottom = 50.0
+text = "Be careful with this fish, shortly after you hook them they will inflate and shoot upwards! Not so efishent."
 
 [node name="Button" parent="CanvasLayer/Blowfish/VBoxContainer" index="2"]
 margin_top = 54.0
@@ -93,6 +95,7 @@ texture = SubResource( 3 )
 [node name="RichTextLabel" parent="CanvasLayer/Dragonfish/VBoxContainer" index="1"]
 margin_top = 36.0
 margin_bottom = 50.0
+text = "Sofishticated fishes that hate to be hooked, after a little moment they will release the hook and will leave you floating away!"
 
 [node name="Button" parent="CanvasLayer/Dragonfish/VBoxContainer" index="2"]
 margin_top = 54.0
@@ -111,6 +114,7 @@ texture = SubResource( 4 )
 [node name="RichTextLabel" parent="CanvasLayer/DumboOctopus/VBoxContainer" index="1"]
 margin_top = 20.0
 margin_bottom = 34.0
+text = "Friendly and funny octupuses from the depths. I be done seen about everything when I see one of them fly."
 
 [node name="Button" parent="CanvasLayer/DumboOctopus/VBoxContainer" index="2"]
 margin_top = 38.0
@@ -119,15 +123,13 @@ margin_bottom = 57.0
 [node name="Clownfish" parent="CanvasLayer" instance=ExtResource( 4 )]
 margin_bottom = 42.5
 
-[node name="VBoxContainer" parent="CanvasLayer/Clownfish" index="0"]
-margin_bottom = 61.0
-
 [node name="TextureRect" parent="CanvasLayer/Clownfish/VBoxContainer" index="0"]
 margin_bottom = 16.0
 
 [node name="RichTextLabel" parent="CanvasLayer/Clownfish/VBoxContainer" index="1"]
 margin_top = 20.0
 margin_bottom = 34.0
+text = "Docile and playful fish that will carry you in the direction they are swimming. WE LIVE IN A SOCIETY."
 
 [node name="Button" parent="CanvasLayer/Clownfish/VBoxContainer" index="2"]
 margin_top = 38.0
