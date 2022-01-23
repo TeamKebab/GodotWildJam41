@@ -6,8 +6,8 @@ on:
 
 env:
   GODOT_VERSION: 3.4.2
-  EXPORT_NAME: team-kebab-gwj41
-  ITCH_GAME: gwj41
+  EXPORT_NAME: team-kebab-weird-fishes
+  ITCH_GAME: weird-fishes
   ITCH_USER: team-kebab
 
 jobs:
