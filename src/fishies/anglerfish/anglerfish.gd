@@ -14,12 +14,10 @@ func _ready() -> void:
 	
 	
 func light_on() -> void:
-	animation.play("Caught")
 	big_light.show()
 	
 
 func light_off() -> void:
-	animation.play("Idle")
 	big_light.hide()
 	
 	
