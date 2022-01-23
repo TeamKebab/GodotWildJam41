@@ -22,7 +22,7 @@ func light_off() -> void:
 	
 	
 func _on_hooked() -> void:
-	yield(get_tree().create_timer(light_up_delay), "timeout")
+	yield(get_tree().create_timer(light_up_delay, false), "timeout")
 	light_on()
 
 

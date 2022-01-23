@@ -26,6 +26,7 @@ tracks/0/keys = {
 
 [node name="VerticalFish" instance=ExtResource( 2 )]
 rotation = 4.71239
+type = "Clownfish"
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 1 )

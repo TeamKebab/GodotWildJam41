@@ -45,5 +45,5 @@ func blow_up() -> void:
 	
 
 func _on_hooked() -> void:
-	yield(get_tree().create_timer(blow_up_delay), "timeout")
+	yield(get_tree().create_timer(blow_up_delay, false), "timeout")
 	blow_up()

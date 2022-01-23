@@ -17,5 +17,5 @@ bus = "Music"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Popup" parent="CanvasLayer" instance=ExtResource( 4 )]
+[node name="Default" parent="CanvasLayer" instance=ExtResource( 4 )]
 margin_bottom = 42.5

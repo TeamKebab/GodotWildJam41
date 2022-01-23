@@ -10,17 +10,16 @@ enum Scene {
 
 const main_score = preload("res://game/main_score.mp3")
 
-
 export var show_puns := true
 
 var total_mseconds:= 0
 var stats:= {}
 var hooked_fishes := []
-
+var popups:= {}
 var start_time
 
 onready var scene_loader = $SceneLoader
-onready var popup: Popup = $CanvasLayer/Popup
+onready var popup_container = $CanvasLayer
 
 func _ready() -> void:
 	randomize()
@@ -30,6 +29,10 @@ func _ready() -> void:
 		Scene.Win: "res://win_screen/win_screen.tscn",
 		Scene.Level_01 : "res://main.tscn",
 	}	
+	
+	for popup in popup_container.get_children():
+		popups[popup.name] = popup
+	
 	
 	play_music(main_score)
 	
@@ -71,7 +74,10 @@ func fish_hooked(type: String) -> void:
 	if show_puns and not hooked_fishes.has(type):
 		hooked_fishes.append(type)
 		pause()
-		popup.popup_centered_minsize()
+		if popups.has(type):
+			popups[type].popup_centered_minsize()
+		else:
+			popups["Default"].popup_centered_minsize()
 
 
 func pause() -> void:

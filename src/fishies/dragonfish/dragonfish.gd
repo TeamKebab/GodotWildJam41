@@ -29,7 +29,7 @@ func update_animation() -> void:
 
 func _on_hooked() -> void:
 	# todo: show count down animation?
-	yield(get_tree().create_timer(throw_off_delay), "timeout")
+	yield(get_tree().create_timer(throw_off_delay, false), "timeout")
 	
 	if hooked:
 		emit_signal("run_away")

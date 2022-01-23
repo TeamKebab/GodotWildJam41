@@ -109,6 +109,7 @@ tracks/2/keys = {
 [node name="Dragonfish" instance=ExtResource( 2 )]
 position = Vector2( -1, 0 )
 script = ExtResource( 3 )
+type = "Dragonfish"
 speed = 50
 throw_off_delay = 2.0
 
