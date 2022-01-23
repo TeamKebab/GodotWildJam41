@@ -2,15 +2,20 @@ extends "res://player/harpoon/states/base.gd"
 
 
 var motion = Vector2.ZERO
+var is_current = false
 
 onready var reel_sound = $ReelSound
 
 func enter() -> void:
 	reel_sound.play()
-	
+	is_current = true
 	
 func exit() -> void:
-	reel_sound.call_deferred("stop")
+	is_current = false
+	yield(get_tree().create_timer(0.1), "timeout")
+	
+	if not is_current:
+		reel_sound.stop()
 	
 
 func update(delta: float) -> void:
