@@ -10,6 +10,10 @@ onready var start_position:= global_position
 onready var base_speed:= speed
 onready var visibility_notifier: VisibilityNotifier2D = $VisibilityNotifier2D
 
+onready var blow_up_sound: AudioStreamPlayer2D = $BlowUpSound
+onready var reappear_sound: AudioStreamPlayer2D = $ReappearSound
+
+
 func _ready() -> void:
 	connect("hooked", self, "_on_hooked")
 	
@@ -26,11 +30,13 @@ func reset() -> void:
 	calculate_trajectory(end)
 	
 	yield(get_tree().create_timer(0.1), "timeout")
+	reappear_sound.play()
 	show()
 	
 	
 func blow_up() -> void:
 	animation.play("Blown")
+	blow_up_sound.play()
 	rotation = - PI / 2
 	
 	speed = float_speed

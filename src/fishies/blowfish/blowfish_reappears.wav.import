@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/blowfish_reappears.wav-36d49e222a4a4120b37756faa980ed8d.sample"
+
+[deps]
+
+source_file="res://fishies/blowfish/blowfish_reappears.wav"
+dest_files=[ "res://.import/blowfish_reappears.wav-36d49e222a4a4120b37756faa980ed8d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
