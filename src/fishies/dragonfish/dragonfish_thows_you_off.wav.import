@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/dragonfish_thows_you_off.wav-618a13947e942d33e9b409553babfa42.sample"
+
+[deps]
+
+source_file="res://fishies/dragonfish/dragonfish_thows_you_off.wav"
+dest_files=[ "res://.import/dragonfish_thows_you_off.wav-618a13947e942d33e9b409553babfa42.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

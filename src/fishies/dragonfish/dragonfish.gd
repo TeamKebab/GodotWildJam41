@@ -6,6 +6,7 @@ export var throw_off_delay:= 1.5
 var down:= false
 
 onready var animation: AnimationPlayer = $AnimationPlayer
+onready var throw_off_sound: AudioStreamPlayer2D = $ThrowOffSound
 
 func _ready() -> void:
 	down = end.y > start.y
@@ -32,8 +33,9 @@ func _on_hooked() -> void:
 	yield(get_tree().create_timer(throw_off_delay, false), "timeout")
 	
 	if hooked:
+		throw_off_sound.play()
 		emit_signal("run_away")
-
+		
 
 func _on_released() -> void:
 	# todo: reset animation
