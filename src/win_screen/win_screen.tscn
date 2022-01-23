@@ -29,8 +29,9 @@ position = Vector2( 147, 305 )
 texture = ExtResource( 9 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_right = 256.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 256, 200 )
 custom_constants/margin_top = 20
 __meta__ = {
 "_edit_use_anchors_": false
