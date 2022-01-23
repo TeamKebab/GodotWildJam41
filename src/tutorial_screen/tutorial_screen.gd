@@ -11,4 +11,4 @@ func _ready():
 func _input(event):
 	if started:
 		if event is InputEventKey or event is InputEventMouseButton:
-			Game.go_to(Game.Scene.Level_01)
+			Game.start()

@@ -34,16 +34,11 @@ func _ready() -> void:
 	
 	for popup in popup_container.get_children():
 		popups[popup.name] = popup
-	
-	
-	play_music(main_score)
-	
-	start_time = OS.get_ticks_msec()
 
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and event.scancode == KEY_R:
-		get_tree().reload_current_scene()
+#func _input(event: InputEvent) -> void:
+#	if event is InputEventKey and event.pressed and event.scancode == KEY_R:
+#		get_tree().reload_current_scene()
 
 
 func stat(type: String) -> void:
@@ -54,8 +49,13 @@ func stat(type: String) -> void:
 	
 
 func restart() -> void:
-	play_music(main_score)
 	go_to(Scene.Start)
+	
+
+func start() -> void:
+	play_music(main_score)
+	go_to(Scene.Level_01)
+	start_time = OS.get_ticks_msec()
 	hooked_fishes = []
 	stats = {}
 	total_mseconds = 0
