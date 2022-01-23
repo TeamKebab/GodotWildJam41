@@ -120,47 +120,38 @@ script = ExtResource( 6 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.5, 0.5 )
 
-[node name="Bg01" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Bg01" type="Sprite" parent="ParallaxBackground/Background"]
 position = Vector2( 150, 400 )
 texture = ExtResource( 20 )
 
-[node name="Bg02" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Bg02" type="Sprite" parent="ParallaxBackground/Background"]
 position = Vector2( 150, 1424 )
 texture = ExtResource( 19 )
 
-[node name="Bg03" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Bg03" type="Sprite" parent="ParallaxBackground/Background"]
 position = Vector2( 150, 2448 )
 texture = ExtResource( 18 )
 
-[node name="Bg04" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Bg04" type="Sprite" parent="ParallaxBackground/Background"]
 position = Vector2( 150, 3472 )
 texture = ExtResource( 15 )
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Plants" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.75, 0.75 )
-motion_offset = Vector2( 0.5, 0 )
 
-[node name="BgStuff02" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+[node name="BgStuff02" type="Sprite" parent="ParallaxBackground/Plants"]
 position = Vector2( 37, 279 )
 texture = ExtResource( 17 )
 
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( -71, 623 )
-motion_scale = Vector2( 0.75, 0.75 )
-
-[node name="BgStuff01" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
-position = Vector2( 222, 443 )
+[node name="BgStuff01" type="Sprite" parent="ParallaxBackground/Plants"]
+position = Vector2( 151, 1066 )
 texture = ExtResource( 16 )
 
-[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( -71, 623 )
-motion_scale = Vector2( 0.75, 0.75 )
-
-[node name="BgStuff03" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
-position = Vector2( 230, 747 )
+[node name="BgStuff03" type="Sprite" parent="ParallaxBackground/Plants"]
+position = Vector2( 156, 1707 )
 texture = ExtResource( 21 )
 
 [node name="TileMap" type="TileMap" parent="."]
