@@ -42,7 +42,7 @@ margin_bottom = 42.5
 margin_bottom = 42.5
 
 [node name="VBoxContainer" parent="CanvasLayer/Anglerfish" index="0"]
-margin_bottom = 88.0
+margin_bottom = 147.0
 
 [node name="TextureRect" parent="CanvasLayer/Anglerfish/VBoxContainer" index="0"]
 margin_left = 28.0
@@ -50,20 +50,25 @@ margin_right = 72.0
 margin_bottom = 43.0
 texture = SubResource( 1 )
 
-[node name="RichTextLabel" parent="CanvasLayer/Anglerfish/VBoxContainer" index="1"]
+[node name="Label" parent="CanvasLayer/Anglerfish/VBoxContainer" index="1"]
 margin_top = 47.0
-margin_bottom = 61.0
+margin_bottom = 60.0
+text = "Anglerfish"
+
+[node name="RichTextLabel" parent="CanvasLayer/Anglerfish/VBoxContainer" index="2"]
+margin_top = 64.0
+margin_bottom = 120.0
 text = "Pacifisht fishes from the abyss. Hook them to enlighten your way!"
 
-[node name="Button" parent="CanvasLayer/Anglerfish/VBoxContainer" index="2"]
-margin_top = 65.0
-margin_bottom = 84.0
+[node name="Button" parent="CanvasLayer/Anglerfish/VBoxContainer" index="3"]
+margin_top = 124.0
+margin_bottom = 143.0
 
 [node name="Blowfish" parent="CanvasLayer" instance=ExtResource( 4 )]
 margin_bottom = 61.5
 
 [node name="VBoxContainer" parent="CanvasLayer/Blowfish" index="0"]
-margin_bottom = 77.0
+margin_bottom = 164.0
 
 [node name="TextureRect" parent="CanvasLayer/Blowfish/VBoxContainer" index="0"]
 margin_left = 34.0
@@ -71,20 +76,25 @@ margin_right = 66.0
 margin_bottom = 32.0
 texture = SubResource( 2 )
 
-[node name="RichTextLabel" parent="CanvasLayer/Blowfish/VBoxContainer" index="1"]
+[node name="Label" parent="CanvasLayer/Blowfish/VBoxContainer" index="1"]
 margin_top = 36.0
-margin_bottom = 50.0
+margin_bottom = 49.0
+text = "Blowfish"
+
+[node name="RichTextLabel" parent="CanvasLayer/Blowfish/VBoxContainer" index="2"]
+margin_top = 53.0
+margin_bottom = 137.0
 text = "Be careful with this fish, shortly after you hook them they will inflate and shoot upwards! Not so efishent."
 
-[node name="Button" parent="CanvasLayer/Blowfish/VBoxContainer" index="2"]
-margin_top = 54.0
-margin_bottom = 73.0
+[node name="Button" parent="CanvasLayer/Blowfish/VBoxContainer" index="3"]
+margin_top = 141.0
+margin_bottom = 160.0
 
 [node name="Dragonfish" parent="CanvasLayer" instance=ExtResource( 4 )]
 margin_bottom = 45.5
 
 [node name="VBoxContainer" parent="CanvasLayer/Dragonfish" index="0"]
-margin_bottom = 77.0
+margin_bottom = 178.0
 
 [node name="TextureRect" parent="CanvasLayer/Dragonfish/VBoxContainer" index="0"]
 margin_left = 34.0
@@ -92,48 +102,60 @@ margin_right = 66.0
 margin_bottom = 32.0
 texture = SubResource( 3 )
 
-[node name="RichTextLabel" parent="CanvasLayer/Dragonfish/VBoxContainer" index="1"]
+[node name="Label" parent="CanvasLayer/Dragonfish/VBoxContainer" index="1"]
 margin_top = 36.0
-margin_bottom = 50.0
+margin_bottom = 49.0
+text = "Dragonfish"
+
+[node name="RichTextLabel" parent="CanvasLayer/Dragonfish/VBoxContainer" index="2"]
+margin_top = 53.0
+margin_bottom = 151.0
 text = "Sofishticated fishes that hate to be hooked, after a little moment they will release the hook and will leave you floating away!"
 
-[node name="Button" parent="CanvasLayer/Dragonfish/VBoxContainer" index="2"]
-margin_top = 54.0
-margin_bottom = 73.0
+[node name="Button" parent="CanvasLayer/Dragonfish/VBoxContainer" index="3"]
+margin_top = 155.0
+margin_bottom = 174.0
 
 [node name="DumboOctopus" parent="CanvasLayer" instance=ExtResource( 4 )]
 margin_bottom = 45.5
 
 [node name="VBoxContainer" parent="CanvasLayer/DumboOctopus" index="0"]
-margin_bottom = 61.0
+margin_bottom = 148.0
 
 [node name="TextureRect" parent="CanvasLayer/DumboOctopus/VBoxContainer" index="0"]
 margin_bottom = 16.0
 texture = SubResource( 4 )
 
-[node name="RichTextLabel" parent="CanvasLayer/DumboOctopus/VBoxContainer" index="1"]
+[node name="Label" parent="CanvasLayer/DumboOctopus/VBoxContainer" index="1"]
 margin_top = 20.0
-margin_bottom = 34.0
+margin_bottom = 33.0
+text = "Dumbo Octopus"
+
+[node name="RichTextLabel" parent="CanvasLayer/DumboOctopus/VBoxContainer" index="2"]
+margin_top = 37.0
+margin_bottom = 121.0
 text = "Friendly and funny octupuses from the depths. I be done seen about everything when I see one of them fly."
 
-[node name="Button" parent="CanvasLayer/DumboOctopus/VBoxContainer" index="2"]
-margin_top = 38.0
-margin_bottom = 57.0
+[node name="Button" parent="CanvasLayer/DumboOctopus/VBoxContainer" index="3"]
+margin_top = 125.0
+margin_bottom = 144.0
 
 [node name="Clownfish" parent="CanvasLayer" instance=ExtResource( 4 )]
 margin_bottom = 42.5
 
-[node name="TextureRect" parent="CanvasLayer/Clownfish/VBoxContainer" index="0"]
-margin_bottom = 16.0
+[node name="VBoxContainer" parent="CanvasLayer/Clownfish" index="0"]
+margin_bottom = 145.0
 
-[node name="RichTextLabel" parent="CanvasLayer/Clownfish/VBoxContainer" index="1"]
-margin_top = 20.0
-margin_bottom = 34.0
+[node name="Label" parent="CanvasLayer/Clownfish/VBoxContainer" index="1"]
+text = "Clownfish"
+
+[node name="RichTextLabel" parent="CanvasLayer/Clownfish/VBoxContainer" index="2"]
+margin_bottom = 118.0
 text = "Docile and playful fish that will carry you in the direction they are swimming. WE LIVE IN A SOCIETY."
 
-[node name="Button" parent="CanvasLayer/Clownfish/VBoxContainer" index="2"]
-margin_top = 38.0
-margin_bottom = 57.0
+[node name="Button" parent="CanvasLayer/Clownfish/VBoxContainer" index="3"]
+margin_top = 122.0
+margin_bottom = 141.0
 
 [editable path="CanvasLayer/Anglerfish"]
 [editable path="CanvasLayer/Blowfish"]
