@@ -15,6 +15,7 @@ var was_on_floor: bool
 
 onready var harpoon: Harpoon = get_parent().find_node("Harpoon")
 onready var crash_sound = $CrashSound
+onready var hit_sound = $HitSound
 
 onready var hitbox = $Hitbox
 onready var disable_tween = $DisableTween
@@ -75,6 +76,7 @@ func is_reeling_in() -> bool:
 
 
 func urchin_hit(urchin: Urchin) -> void:
+	hit_sound.play()
 	Game.stat("urchin")
 	harpoon.disable()
 	motion = urchin.global_position.direction_to(global_position) * urchin.bounce_speed
