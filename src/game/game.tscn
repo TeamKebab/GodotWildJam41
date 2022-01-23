@@ -1,9 +1,27 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://game/game.gd" type="Script" id=1]
 [ext_resource path="res://components/scene_loader/scene_loader.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/main_score.mp3" type="AudioStream" id=3]
 [ext_resource path="res://popups/popup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://fishies/blowfish/blowfish.png" type="Texture" id=5]
+[ext_resource path="res://fishies/dragonfish/dragonfish.png" type="Texture" id=6]
+[ext_resource path="res://fishies/dumbo_octopus/dumbo_octopus.png" type="Texture" id=7]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/anglerfish_popup.png-ec73b150c32a75cdb78663597e08196c.stex"
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 16, 16 )
 
 [node name="GameManager" type="Node"]
 pause_mode = 2
@@ -19,3 +37,104 @@ bus = "Music"
 
 [node name="Default" parent="CanvasLayer" instance=ExtResource( 4 )]
 margin_bottom = 42.5
+
+[node name="Anglerfish" parent="CanvasLayer" instance=ExtResource( 4 )]
+margin_bottom = 42.5
+
+[node name="VBoxContainer" parent="CanvasLayer/Anglerfish" index="0"]
+margin_bottom = 88.0
+
+[node name="TextureRect" parent="CanvasLayer/Anglerfish/VBoxContainer" index="0"]
+margin_left = 28.0
+margin_right = 72.0
+margin_bottom = 43.0
+texture = SubResource( 1 )
+
+[node name="RichTextLabel" parent="CanvasLayer/Anglerfish/VBoxContainer" index="1"]
+margin_top = 47.0
+margin_bottom = 61.0
+
+[node name="Button" parent="CanvasLayer/Anglerfish/VBoxContainer" index="2"]
+margin_top = 65.0
+margin_bottom = 84.0
+
+[node name="Blowfish" parent="CanvasLayer" instance=ExtResource( 4 )]
+margin_bottom = 61.5
+
+[node name="VBoxContainer" parent="CanvasLayer/Blowfish" index="0"]
+margin_bottom = 77.0
+
+[node name="TextureRect" parent="CanvasLayer/Blowfish/VBoxContainer" index="0"]
+margin_left = 34.0
+margin_right = 66.0
+margin_bottom = 32.0
+texture = SubResource( 2 )
+
+[node name="RichTextLabel" parent="CanvasLayer/Blowfish/VBoxContainer" index="1"]
+margin_top = 36.0
+margin_bottom = 50.0
+
+[node name="Button" parent="CanvasLayer/Blowfish/VBoxContainer" index="2"]
+margin_top = 54.0
+margin_bottom = 73.0
+
+[node name="Dragonfish" parent="CanvasLayer" instance=ExtResource( 4 )]
+margin_bottom = 45.5
+
+[node name="VBoxContainer" parent="CanvasLayer/Dragonfish" index="0"]
+margin_bottom = 77.0
+
+[node name="TextureRect" parent="CanvasLayer/Dragonfish/VBoxContainer" index="0"]
+margin_left = 34.0
+margin_right = 66.0
+margin_bottom = 32.0
+texture = SubResource( 3 )
+
+[node name="RichTextLabel" parent="CanvasLayer/Dragonfish/VBoxContainer" index="1"]
+margin_top = 36.0
+margin_bottom = 50.0
+
+[node name="Button" parent="CanvasLayer/Dragonfish/VBoxContainer" index="2"]
+margin_top = 54.0
+margin_bottom = 73.0
+
+[node name="DumboOctopus" parent="CanvasLayer" instance=ExtResource( 4 )]
+margin_bottom = 45.5
+
+[node name="VBoxContainer" parent="CanvasLayer/DumboOctopus" index="0"]
+margin_bottom = 61.0
+
+[node name="TextureRect" parent="CanvasLayer/DumboOctopus/VBoxContainer" index="0"]
+margin_bottom = 16.0
+texture = SubResource( 4 )
+
+[node name="RichTextLabel" parent="CanvasLayer/DumboOctopus/VBoxContainer" index="1"]
+margin_top = 20.0
+margin_bottom = 34.0
+
+[node name="Button" parent="CanvasLayer/DumboOctopus/VBoxContainer" index="2"]
+margin_top = 38.0
+margin_bottom = 57.0
+
+[node name="Clownfish" parent="CanvasLayer" instance=ExtResource( 4 )]
+margin_bottom = 42.5
+
+[node name="VBoxContainer" parent="CanvasLayer/Clownfish" index="0"]
+margin_bottom = 61.0
+
+[node name="TextureRect" parent="CanvasLayer/Clownfish/VBoxContainer" index="0"]
+margin_bottom = 16.0
+
+[node name="RichTextLabel" parent="CanvasLayer/Clownfish/VBoxContainer" index="1"]
+margin_top = 20.0
+margin_bottom = 34.0
+
+[node name="Button" parent="CanvasLayer/Clownfish/VBoxContainer" index="2"]
+margin_top = 38.0
+margin_bottom = 57.0
+
+[editable path="CanvasLayer/Anglerfish"]
+[editable path="CanvasLayer/Blowfish"]
+[editable path="CanvasLayer/Dragonfish"]
+[editable path="CanvasLayer/DumboOctopus"]
+[editable path="CanvasLayer/Clownfish"]
