@@ -1524,7 +1524,7 @@ __meta__ = {
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ReelInTouchButton" type="TouchScreenButton" parent="CanvasLayer"]
-position = Vector2( 196, 139 )
+position = Vector2( 219, 162 )
 normal = ExtResource( 13 )
 action = "reelin"
 visibility_mode = 1
