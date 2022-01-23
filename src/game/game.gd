@@ -5,11 +5,13 @@ enum Scene {
 	Start,
 	Tutorial,
 	Win,
+	Options,
 	Level_01,
 }
 
 
 const main_score = preload("res://game/main_score.mp3")
+const start_score = preload("res://game/random_bubble_sounds.wav")
 
 export var show_puns := true
 
@@ -26,15 +28,17 @@ func _ready() -> void:
 	randomize()
 	
 	scene_loader.scenes = {
-		Scene.Start : "res://main.tscn",
+		Scene.Start : "res://start_screen/start_screen.tscn",
 		Scene.Tutorial: "res://tutorial_screen/tutorial_screen.tscn",
 		Scene.Win: "res://win_screen/win_screen.tscn",
+		Scene.Options: "res://options_screen/options_screen.tscn",
 		Scene.Level_01 : "res://main.tscn",
 	}	
 	
 	for popup in popup_container.get_children():
 		popups[popup.name] = popup
 
+	play_music(start_score)
 
 #func _input(event: InputEvent) -> void:
 #	if event is InputEventKey and event.pressed and event.scancode == KEY_R:
@@ -50,7 +54,8 @@ func stat(type: String) -> void:
 
 func restart() -> void:
 	go_to(Scene.Start)
-	
+	play_music(start_score)
+
 
 func start() -> void:
 	play_music(main_score)

@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GWJ41"
-run/main_scene="res://tutorial_screen/tutorial_screen.tscn"
+run/main_scene="res://start_screen/start_screen.tscn"
 config/icon="res://icon.png"
 
 [autoload]

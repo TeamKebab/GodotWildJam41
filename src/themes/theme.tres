@@ -1,11 +1,19 @@
-[gd_resource type="Theme" load_steps=6 format=2]
+[gd_resource type="Theme" load_steps=12 format=2]
 
 [ext_resource path="res://themes/fonts/retro4_16.tres" type="DynamicFont" id=1]
 [ext_resource path="res://themes/panel.tres" type="StyleBox" id=2]
 [ext_resource path="res://themes/button_pressed.tres" type="StyleBox" id=3]
 [ext_resource path="res://themes/button_normal.tres" type="StyleBox" id=4]
+[ext_resource path="res://themes/slider_grabber.png" type="Texture" id=5]
+[ext_resource path="res://themes/check.png" type="Texture" id=6]
+[ext_resource path="res://themes/check_off.png" type="Texture" id=7]
+[ext_resource path="res://themes/slider_grabber-highlight.png" type="Texture" id=8]
 
 [sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
 
 [resource]
 default_font = ExtResource( 1 )
@@ -13,6 +21,13 @@ Button/styles/focus = SubResource( 1 )
 Button/styles/hover = ExtResource( 4 )
 Button/styles/normal = ExtResource( 4 )
 Button/styles/pressed = ExtResource( 3 )
+CheckBox/icons/checked = ExtResource( 6 )
+CheckBox/icons/unchecked = ExtResource( 7 )
+HSlider/icons/grabber = ExtResource( 5 )
+HSlider/icons/grabber_highlight = ExtResource( 8 )
+HSlider/styles/grabber_area = SubResource( 2 )
+HSlider/styles/grabber_area_highlight = SubResource( 3 )
+HSlider/styles/slider = ExtResource( 2 )
 Panel/styles/panel = ExtResource( 2 )
 PanelContainer/styles/panel = ExtResource( 2 )
 PopupPanel/styles/panel = ExtResource( 2 )
